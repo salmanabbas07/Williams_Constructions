@@ -2,7 +2,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { 
-  HardHat, 
   MapPin, 
   Phone, 
   Mail, 
@@ -51,14 +50,12 @@ export const Footer = () => {
           <div className="footer-grid">
             {/* Column 1: Williams Services */}
             <div className="footer-col footer-col-brand">
-              <Link to="/" className="footer-logo">
-                <div className="footer-logo-symbol">
-                  <HardHat size={22} className="footer-hardhat" />
-                </div>
-                <div className="footer-logo-text">
-                  <span className="footer-brand-name">WILLIAMS</span>
-                  <span className="footer-brand-sub">SERVICES & CONSTRUCTIONS</span>
-                </div>
+              <Link to="/" className="footer-logo" aria-label="Williams Constructions Domov">
+                <img 
+                  src="/images/WILLIAMS%20CONSTRUCTIONS%20GROUP%20LOGO.jpg" 
+                  alt="Williams Constructions Group" 
+                  className="footer-brand-logo"
+                />
               </Link>
 
               <p className="footer-about-text">

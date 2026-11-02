@@ -9,8 +9,7 @@ import {
   Menu, 
   X, 
   Clock, 
-  ArrowRight,
-  HardHat
+  ArrowRight
 } from 'lucide-react';
 import { navLinks, companyContact } from '../../data/navigationData';
 import Button from '../Button/Button';
@@ -91,17 +90,15 @@ export const Header = () => {
         <div className="container-wide navbar-inner">
           {/* Logo */}
           <Link to="/" className="site-logo" aria-label="Williams Constructions Domov">
-            <div className="logo-symbol">
-              <HardHat size={24} className="logo-hardhat" />
-            </div>
-            <div className="logo-text-group">
-              <span className="logo-title">WILLIAMS</span>
-              <span className="logo-subtitle">CONSTRUCTIONS & SERVICES</span>
-            </div>
+            <img 
+              src="/images/WILLIAMS%20CONSTRUCTIONS%20GROUP%20LOGO.jpg" 
+              alt="Williams Constructions Group" 
+              className="header-brand-logo"
+            />
           </Link>
 
-          {/* Desktop Nav Links */}
-          <div className="desktop-nav-wrap">
+          {/* Desktop Nav Links (Centered) */}
+          <div className="desktop-nav-center">
             <ul className="nav-menu">
               {navLinks.map((item) => {
                 if (item.isDropdown) {
@@ -156,18 +153,19 @@ export const Header = () => {
                 );
               })}
             </ul>
+          </div>
 
-            <div className="nav-cta-wrap">
-              <Button 
-                to="/contact" 
-                variant="primary" 
-                size="sm"
-                icon={ArrowRight}
-                iconPosition="right"
-              >
-                Zahtevajte delovno silo
-              </Button>
-            </div>
+          {/* Desktop CTA (Right) */}
+          <div className="desktop-nav-right">
+            <Button 
+              to="/contact" 
+              variant="primary" 
+              size="sm"
+              icon={ArrowRight}
+              iconPosition="right"
+            >
+              Zahtevajte delovno silo
+            </Button>
           </div>
 
           {/* Mobile Hamburger Toggle Button */}

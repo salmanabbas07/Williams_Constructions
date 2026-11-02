@@ -18,7 +18,7 @@ export const navLinks = [
   },
   { label: 'Projekti', path: '/projects' },
   { label: 'Blog', path: '/blog' },
-  { label: 'FAQ', path: '/faq' },
+  { label: 'Pogosta vprašanja', path: '/Pogosta vprašanja' },
   { label: 'Kontakt', path: '/contact' }
 ];
 
