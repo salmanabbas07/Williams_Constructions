@@ -16,7 +16,12 @@ import Button from '../Button/Button';
 import './Header.css';
 
 export const Header = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return window.scrollY > 40;
+    }
+    return false;
+  });
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
@@ -24,11 +29,20 @@ export const Header = () => {
   const dropdownRef = useRef(null);
 
   useEffect(() => {
+    let ticking = false;
+
     const handleScroll = () => {
-      if (window.scrollY > 30) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const currentScrollY = window.scrollY;
+          if (currentScrollY > 40) {
+            setIsScrolled(true);
+          } else if (currentScrollY < 15) {
+            setIsScrolled(false);
+          }
+          ticking = false;
+        });
+        ticking = true;
       }
     };
 
@@ -91,7 +105,7 @@ export const Header = () => {
           {/* Logo */}
           <Link to="/" className="site-logo" aria-label="Williams Constructions Domov">
             <img 
-              src="/images/WILLIAMS%20CONSTRUCTIONS%20GROUP%20LOGO.jpg" 
+              src="/images/WILLIAMSLOGO.png" 
               alt="Williams Constructions Group" 
               className="header-brand-logo"
             />

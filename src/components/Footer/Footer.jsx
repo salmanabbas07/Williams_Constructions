@@ -52,7 +52,7 @@ export const Footer = () => {
             <div className="footer-col footer-col-brand">
               <Link to="/" className="footer-logo" aria-label="Williams Constructions Domov">
                 <img 
-                  src="/images/WILLIAMS%20CONSTRUCTIONS%20GROUP%20LOGO.jpg" 
+                  src="/images/WILLIAMSLOGO.png" 
                   alt="Williams Constructions Group" 
                   className="footer-brand-logo"
                 />
