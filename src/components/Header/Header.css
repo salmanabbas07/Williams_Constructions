@@ -19,6 +19,7 @@
 .header-topbar {
   background-color: var(--dark-navy);
   color: rgba(255, 255, 255, 0.85);
+  /* border: 1px solid red; */
   font-size: 0.8rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   max-height: 48px;
@@ -86,7 +87,10 @@
 /* Main Navbar */
 .header-navbar {
   background-color: var(--white);
+  /* background-color: red; */
   border-bottom: 1px solid var(--border-light);
+  /* border: 1px solid red; */
+
 }
 
 .navbar-inner {
@@ -107,7 +111,7 @@
 }
 
 .header-brand-logo {
-  height: 64px;
+  height: 70px;
   width: 220px;
   object-fit: cover;
   object-position: center;

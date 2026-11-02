@@ -18,7 +18,7 @@ const HERO_SLIDES = [
     tag: 'Industrijska in varilska delovna sila',
     heading: 'Certificirana delovna sila za varjenje in montažo',
     description: 'Zagotavljanje visoko usposobljenih TIG, MIG/MAG varilcev za industrijsko proizvodnjo in zahtevne montažne projekte po vsej Sloveniji.',
-    imagePlaceholder: 'hero-welding-slovenia.jpg',
+    image: '/images/hero-welding-slovenia.webp',
     category: 'welding',
     stats: { number: '100%', label: 'ISO 9606 certificirani varilci' }
   },
@@ -27,7 +27,7 @@ const HERO_SLIDES = [
     tag: 'Težka gradbena mehanizacija',
     heading: 'Izkušeni upravljavci težke gradbene mehanizacije',
     description: 'Usposobljeni strojniki za bagre, dvigala in nakladalce, ki zagotavljajo varen ter učinkovit potek del na gradbišču.',
-    imagePlaceholder: 'hero-machinery-operators.jpg',
+    image: '/images/hero-machinery-operators.webp',
     category: 'machinery',
     stats: { number: '15+', label: 'let združenih izkušenj na terenu' }
   },
@@ -36,7 +36,7 @@ const HERO_SLIDES = [
     tag: 'Zidarstvo in gradbena dela',
     heading: 'Zanesljivo zidarstvo in gradbena dela v Sloveniji',
     description: 'Kakovostna delovna sila, nemotena koordinacija in pravočasna izvedba projektov za gradbena podjetja po vsej Sloveniji.',
-    imagePlaceholder: 'hero-masonry-construction.jpg',
+    image: '/images/hero-masonry-construction.webp',
     category: 'construction',
     stats: { number: '100%', label: 'Veljavna slovenska dovoljenja' }
   }
@@ -48,9 +48,10 @@ export const Hero = () => {
       <Swiper
         modules={[Autoplay, Pagination, Navigation, EffectFade]}
         effect="fade"
-        speed={1000}
+        fadeEffect={{ crossFade: true }}
+        speed={900}
         autoplay={{
-          delay: 5500,
+          delay: 3500,
           disableOnInteraction: false,
           pauseOnMouseEnter: true
         }}
@@ -69,10 +70,15 @@ export const Hero = () => {
       >
         {HERO_SLIDES.map((slide) => (
           <SwiperSlide key={slide.id} className="hero-slide">
-            {/* Background Image / Placeholder with Blueprint & Gradient Overlay */}
+            {/* Background Image with Blueprint Grid & Gradient Overlay */}
             <div className="hero-bg-wrap">
+              <img 
+                src={slide.image} 
+                alt={slide.heading} 
+                className="hero-bg-image" 
+                loading={slide.id === 1 ? 'eager' : 'lazy'}
+              />
               <div className="hero-blueprint-grid" />
-              <div className={`hero-placeholder-visual hero-visual-${slide.category}`} />
               <div className="hero-dark-overlay" />
             </div>
 
