@@ -1,0 +1,137 @@
+/* src/components/ImagePlaceholder/ImagePlaceholder.css */
+
+.image-placeholder-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background-color: var(--navy-darker);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.image-placeholder-container .real-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-smooth);
+}
+
+.image-placeholder-container:hover .real-image {
+  transform: scale(1.04);
+}
+
+.placeholder-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #022B58 0%, #011E3D 60%, #081B30 100%);
+  text-align: center;
+  user-select: none;
+}
+
+.placeholder-grid-pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.08;
+  background-image: 
+    linear-gradient(to right, #FFFFFF 1px, transparent 1px),
+    linear-gradient(to bottom, #FFFFFF 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.placeholder-accent-glow {
+  position: absolute;
+  top: -30%;
+  right: -30%;
+  width: 70%;
+  height: 70%;
+  background: radial-gradient(circle, rgba(223, 161, 26, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.placeholder-body {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  max-width: 90%;
+}
+
+.placeholder-icon-wrap {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(223, 161, 26, 0.12);
+  border: 1px solid rgba(223, 161, 26, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-gold);
+  transition: transform var(--transition-normal);
+}
+
+.image-placeholder-container:hover .placeholder-icon-wrap {
+  transform: scale(1.1);
+  background: rgba(223, 161, 26, 0.2);
+}
+
+.placeholder-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.placeholder-caption {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  letter-spacing: 0.01em;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.placeholder-filename {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: monospace;
+  font-size: 0.725rem;
+  color: rgba(215, 184, 103, 0.85);
+  background: rgba(0, 0, 0, 0.3);
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+  border: 1px dashed rgba(223, 161, 26, 0.3);
+}
+
+.placeholder-filename .inline-icon {
+  color: var(--primary-gold);
+}
+
+.placeholder-badge {
+  position: absolute;
+  bottom: 0.75rem;
+  right: 0.75rem;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  z-index: 2;
+}
+
+.badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--primary-gold);
+}

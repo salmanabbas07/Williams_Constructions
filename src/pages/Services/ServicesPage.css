@@ -1,0 +1,7 @@
+/* src/pages/Services/ServicesPage.css */
+
+.services-page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}

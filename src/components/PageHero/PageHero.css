@@ -1,0 +1,105 @@
+/* src/components/PageHero/PageHero.css */
+
+.page-hero-banner {
+  position: relative;
+  background: linear-gradient(135deg, var(--dark-navy) 0%, #011E3D 100%);
+  color: #FFFFFF;
+  padding: clamp(3rem, 5vw, 4.5rem) 0 clamp(3.5rem, 6vw, 5rem);
+  overflow: hidden;
+  border-bottom: 3px solid var(--primary-gold);
+}
+
+.page-hero-blueprint {
+  position: absolute;
+  inset: 0;
+  opacity: 0.08;
+  background-image: 
+    linear-gradient(to right, #FFFFFF 1px, transparent 1px),
+    linear-gradient(to bottom, #FFFFFF 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+}
+
+.page-hero-container {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+}
+
+.breadcrumb-nav {
+  margin-bottom: 1.25rem;
+}
+
+.breadcrumb-list {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.breadcrumb-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.825rem;
+}
+
+.breadcrumb-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: rgba(255, 255, 255, 0.7);
+  transition: color var(--transition-fast);
+}
+
+.breadcrumb-link:hover {
+  color: var(--primary-gold);
+}
+
+.breadcrumb-chevron {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.breadcrumb-current {
+  color: var(--primary-gold);
+  font-weight: 600;
+}
+
+.page-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--primary-gold);
+  background-color: rgba(223, 161, 26, 0.15);
+  border: 1px solid rgba(223, 161, 26, 0.3);
+  padding: 0.3rem 0.8rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 0.85rem;
+}
+
+.page-hero-badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--primary-gold);
+}
+
+.page-hero-title {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
+}
+
+.page-hero-subtitle {
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.6;
+}

@@ -1,0 +1,272 @@
+/* src/pages/Home/sections/Hero/Hero.css */
+
+.hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 82vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--dark-navy);
+  overflow: hidden;
+}
+
+.hero-swiper {
+  width: 100%;
+  height: 100%;
+  min-height: 82vh;
+}
+
+.hero-slide {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 82vh;
+}
+
+/* Background Layers */
+.hero-bg-wrap {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.hero-blueprint-grid {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  z-index: 2;
+}
+
+.hero-placeholder-visual {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.05);
+  transition: transform 6s ease-out;
+}
+
+.hero-slide.swiper-slide-active .hero-placeholder-visual {
+  transform: scale(1);
+}
+
+/* Rich Construction-Themed Gradient Placeholders */
+.hero-visual-welding {
+  background: linear-gradient(135deg, #022B58 0%, #05192D 40%, #173250 80%, #302611 100%);
+}
+
+.hero-visual-machinery {
+  background: linear-gradient(135deg, #022B58 0%, #0B2544 50%, #202A36 80%, #3B2D0E 100%);
+}
+
+.hero-visual-construction {
+  background: linear-gradient(135deg, #011E3D 0%, #022B58 45%, #183350 75%, #2B230B 100%);
+}
+
+.hero-dark-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg, 
+    rgba(2, 43, 88, 0.95) 0%, 
+    rgba(2, 43, 88, 0.85) 55%, 
+    rgba(2, 43, 88, 0.6) 100%
+  );
+  z-index: 3;
+}
+
+/* Hero Content */
+.hero-container {
+  position: relative;
+  z-index: 4;
+  padding-top: clamp(4rem, 8vw, 6.5rem);
+  padding-bottom: clamp(4rem, 8vw, 6.5rem);
+}
+
+.hero-content {
+  max-width: 820px;
+}
+
+.hero-badge-wrap {
+  margin-bottom: 1.25rem;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1rem;
+  background-color: rgba(223, 161, 26, 0.15);
+  border: 1px solid rgba(223, 161, 26, 0.4);
+  color: var(--primary-gold);
+  border-radius: var(--radius-full);
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  backdrop-filter: blur(8px);
+}
+
+.hero-heading {
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.4rem;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+}
+
+.hero-description {
+  font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.6;
+  margin-bottom: 2.2rem;
+  max-width: 700px;
+}
+
+.hero-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+
+/* Trust Bar */
+.hero-trust-bar {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.75rem;
+  padding: 0.9rem 1.6rem;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-md);
+  backdrop-filter: blur(10px);
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.trust-icon {
+  color: var(--primary-gold);
+  flex-shrink: 0;
+}
+
+.trust-strong {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.1;
+}
+
+.trust-text {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.trust-divider {
+  width: 1px;
+  height: 28px;
+  background-color: rgba(255, 255, 255, 0.18);
+}
+
+/* Controls Bar (Pagination + Arrows) */
+.hero-controls-bar {
+  position: absolute;
+  bottom: 2rem;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hero-custom-pagination {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hero-bullet {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.hero-bullet-active {
+  width: 32px;
+  border-radius: 12px;
+  background: var(--primary-gold);
+}
+
+.hero-arrows {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.hero-nav-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #FFFFFF;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.hero-nav-btn:hover {
+  background: var(--primary-gold);
+  border-color: var(--primary-gold);
+  color: var(--dark-navy);
+}
+
+@media (max-width: 768px) {
+  .hero-section,
+  .hero-swiper,
+  .hero-slide {
+    min-height: 700px;
+  }
+  
+  .hero-dark-overlay {
+    background: rgba(2, 43, 88, 0.9);
+  }
+
+  .hero-trust-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    width: 100%;
+  }
+
+  .trust-divider {
+    display: none;
+  }
+
+  .hero-controls-bar {
+    bottom: 1.25rem;
+  }
+}

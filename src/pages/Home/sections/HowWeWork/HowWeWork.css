@@ -1,0 +1,213 @@
+/* src/pages/Home/sections/HowWeWork/HowWeWork.css */
+
+.how-we-work-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.timeline-container {
+  position: relative;
+  margin-top: 2rem;
+  margin-bottom: 3.5rem;
+}
+
+/* Horizontal Timeline Line for Desktop */
+.timeline-connecting-line {
+  position: absolute;
+  top: 24px;
+  left: 5%;
+  right: 5%;
+  height: 3px;
+  background: linear-gradient(to right, var(--primary-gold), var(--dark-navy), var(--primary-gold));
+  z-index: 1;
+}
+
+.timeline-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1.25rem;
+  position: relative;
+  z-index: 2;
+}
+
+.timeline-step-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timeline-badge-wrap {
+  margin-bottom: 1.25rem;
+}
+
+.timeline-node {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--white);
+  border: 3px solid var(--primary-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(223, 161, 26, 0.3);
+  transition: all var(--transition-fast);
+}
+
+.timeline-step-card:hover .timeline-node {
+  background-color: var(--primary-gold);
+  transform: scale(1.12);
+}
+
+.step-number {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--dark-navy);
+  transition: color var(--transition-fast);
+}
+
+.timeline-step-card:hover .step-number {
+  color: #001C3A;
+}
+
+.timeline-content-card {
+  width: 100%;
+  background-color: var(--light-bg);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 1.4rem 1.1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  transition: all var(--transition-normal);
+}
+
+.timeline-step-card:hover .timeline-content-card {
+  background-color: #FFFFFF;
+  border-color: rgba(223, 161, 26, 0.45);
+  box-shadow: var(--card-hover-shadow);
+  transform: translateY(-4px);
+}
+
+.timeline-icon-box {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  background-color: rgba(2, 43, 88, 0.08);
+  color: var(--dark-navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+  transition: all var(--transition-fast);
+}
+
+.timeline-step-card:hover .timeline-icon-box {
+  background-color: var(--primary-gold);
+  color: var(--dark-navy);
+}
+
+.timeline-duration-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--primary-gold);
+  background-color: rgba(223, 161, 26, 0.1);
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 0.65rem;
+}
+
+.timeline-step-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--dark-navy);
+  line-height: 1.35;
+  margin-bottom: 0.65rem;
+  min-height: 2.6rem;
+}
+
+.timeline-step-desc {
+  font-size: 0.825rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* Workflow Guarantees Box for Full view */
+.workflow-guarantees-box {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  background-color: var(--dark-navy);
+  color: #FFFFFF;
+  padding: 2.5rem;
+  border-radius: var(--radius-lg);
+  margin-bottom: 3rem;
+  border-left: 4px solid var(--primary-gold);
+}
+
+.guarantee-col h4 {
+  color: var(--primary-gold);
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
+}
+
+.guarantee-col p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.925rem;
+  line-height: 1.55;
+}
+
+.how-we-work-cta {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* Responsive: Turn into vertical timeline on mobile and 2-3 column on tablet */
+@media (max-width: 1200px) {
+  .timeline-connecting-line {
+    display: none;
+  }
+
+  .timeline-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .timeline-step-title {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .timeline-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .timeline-step-card {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+
+  .timeline-badge-wrap {
+    margin-bottom: 0;
+  }
+
+  .timeline-content-card {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .workflow-guarantees-box {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+}
