@@ -75,6 +75,8 @@ export const App = () => {
                 <Route path="/how-we-work" element={<HowWeWorkPage />} />
                 <Route path="/blog" element={<BlogPage />} />
                 <Route path="/faq" element={<FAQPage />} />
+                <Route path="/pogosta-vprasanja" element={<FAQPage />} />
+                <Route path="/Pogosta vprašanja" element={<FAQPage />} />
                 <Route path="/contact" element={<ContactPage />} />
                 <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
                 <Route path="*" element={<NotFoundPage />} />
