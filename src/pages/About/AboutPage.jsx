@@ -18,6 +18,8 @@ export const AboutPage = () => {
       />
 
       <PageHero
+        src="/images/about-banner.webp"
+        alt="Williams Construction - O nas"
         badge="O nas"
         title="O nas – Williams Construction"
         subtitle="Dobrodošli pri William Construction, vašem zaupanja vrednem partnerju na področju gradbeništva in celovitih gradbenih storitev. Že vrsto let gradimo z vizijo, natančnostjo in nepopustljivo predanostjo kakovosti."

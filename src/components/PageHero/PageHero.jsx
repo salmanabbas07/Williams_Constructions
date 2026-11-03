@@ -8,10 +8,22 @@ export const PageHero = ({
   badge = '',
   title,
   subtitle = '',
-  breadcrumbs = []
+  breadcrumbs = [],
+  bgImage = '',
+  src = ''
 }) => {
+  const heroImage = bgImage || src;
+
   return (
-    <div className="page-hero-banner">
+    <div className={`page-hero-banner ${heroImage ? 'has-bg-image' : ''}`}>
+      {heroImage && (
+        <div 
+          className="page-hero-bg-image" 
+          style={{ backgroundImage: `url(${heroImage})` }} 
+          aria-hidden="true" 
+        />
+      )}
+      <div className="page-hero-overlay" aria-hidden="true" />
       <div className="page-hero-blueprint" aria-hidden="true" />
       <div className="container page-hero-container">
         {/* Breadcrumb Navigation */}
