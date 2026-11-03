@@ -19,51 +19,51 @@ import './About.css';
 
 const BENEFIT_CARDS = [
   {
-    id: 'efficiency',
-    title: 'Višja učinkovitost',
-    description: 'Dobro organizirana delovna sila z neposrednim nadzorom na gradbišču.',
-    icon: Zap
+    id: 'expertise',
+    title: 'Strokovnost in izkušnje',
+    description: 'Naša ekipa izkušenih inženirjev, mojstrov in arhitektov vsakemu projektu pristopi z vrhunskim znanjem.',
+    icon: Award
   },
   {
-    id: 'quality',
-    title: 'Boljši nadzor kakovosti',
-    description: 'Stalno spremljanje zagotavlja vrhunsko izvedbo del.',
+    id: 'comprehensive',
+    title: 'Celovite storitve na enem mestu',
+    description: 'Od prve ideje, načrtovanja, gradnje na ključ pa do pogodbene realizacije – prevzamemo celotno odgovornost.',
     icon: CheckCircle2
   },
   {
-    id: 'ontime',
-    title: 'Pravočasna izvedba projektov',
-    description: 'Jasno načrtovanje in neposredna komunikacija preprečujeta zamude.',
-    icon: Clock
+    id: 'quality',
+    title: 'Brezkompromisna kakovost',
+    description: 'Uporabljamo preverjene materiale in najsodobnejše gradbene tehnike, ki zagotavljajo dolgotrajnost in trdnost.',
+    icon: ShieldCheck
   },
   {
-    id: 'reliable',
-    title: 'Zanesljiva delovna sila',
-    description: 'Stabilne ekipe brez stalnega menjavanja delavcev.',
-    icon: ShieldCheck
+    id: 'reliability',
+    title: 'Zanesljivost in spoštovanje rokov',
+    description: 'Vaš čas nam je dragocen, zato projekte vedno zaključimo v dogovorjenem roku in v okviru proračuna.',
+    icon: Clock
   }
 ];
 
 const EXTENDED_VALUES = [
   {
-    title: 'Neposredno vodenje na terenu',
-    desc: 'Naše vodstvo preživi čas na delovišču in ne za zaprtimi pisarniškimi vrati. Vse izzive rešujemo takoj pri viru.',
-    icon: Briefcase
+    title: 'Strokovnost in izkušnje',
+    desc: 'Naša ekipa izkušenih inženirjev, mojstrov in arhitektov vsakemu projektu pristopi z vrhunskim znanjem.',
+    icon: Award
   },
   {
-    title: 'Kulturna in jezikovna empatija',
-    desc: 'Govorimo jezik naše mednarodne delovne sile, kar zagotavlja, da so varnostna pravila in gradbeni načrti razumljeni do potankosti.',
-    icon: Users
+    title: 'Celovite storitve na enem mestu',
+    desc: 'Od prve ideje, načrtovanja, gradnje na ključ pa do pogodbene realizacije – prevzamemo celotno odgovornost.',
+    icon: CheckCircle2
   },
   {
-    title: 'Stroga slovenska zakonodajna skladnost',
-    desc: 'Vsak posamezen delavec ima urejeno enotno dovoljenje za prebivanje in delo, zdravniški pregled ter veljavno varstvo pri delu.',
+    title: 'Brezkompromisna kakovost',
+    desc: 'Uporabljamo preverjene materiale in najsodobnejše gradbene tehnike, ki zagotavljajo dolgotrajnost in trdnost.',
     icon: ShieldCheck
   },
   {
-    title: 'Brez stalnega menjavanja ekip',
-    desc: 'Oblikujemo stabilne, povezane delovne skupine, ki ostanejo predane vašemu projektu od temeljnih del do zaključka.',
-    icon: Award
+    title: 'Zanesljivost in spoštovanje rokov',
+    desc: 'Vaš čas nam je dragocen, zato projekte vedno zaključimo v dogovorjenem roku in v okviru proračuna.',
+    icon: Clock
   }
 ];
 
@@ -75,13 +75,9 @@ export const About = ({ variant = 'preview' }) => {
       <div className="container">
         {/* Section Header */}
         <SectionTitle
-          badge="O podjetju Williams Services"
-          title="Zidarstvo, delovna sila in tehnični kader v Sloveniji"
-          subtitle={
-            isFull 
-              ? "Spoznajte izvor, vodstvo in operativno filozofijo zanesljivega partnerja za gradbeno delovno silo v Sloveniji."
-              : "Zrasli iz resničnih izkušenj na gradbiščih za zagotavljanje zanesljive delovne sile in preglednega vodenja po vsej Sloveniji."
-          }
+          badge="O nas"
+          title={isFull ? "Vaš zaupanja vreden partner v gradbeništvu" : "O nas – Williams Construction"}
+          subtitle="Že vrsto let gradimo z vizijo, natančnostjo in nepopustljivo predanostjo kakovosti."
           align="left"
         />
 
@@ -91,18 +87,20 @@ export const About = ({ variant = 'preview' }) => {
           <FadeIn direction="up" delay={0.1} className="about-visual-col">
             <div className="about-image-wrapper">
               <ImagePlaceholder
+                src="/images/about-workforce-supervision.webp"
+                alt="about-workforce-supervision.webp - about"
                 aspectRatio="4/3"
                 category="about"
                 filename="about-workforce-supervision.jpg"
-                caption="Dvojezični nadzor in kontrola kakovosti na gradbišču"
+                caption="Celovite gradbene storitve in strokovno vodenje projektov"
                 className="about-main-image"
               />
 
               {/* Floating Highlight Card */}
               <div className="about-experience-badge">
-                <span className="exp-years">Neposredno</span>
-                <span className="exp-label">Vodstvo na gradbišču</span>
-                <span className="exp-sub">Osebna komunikacija z delavci</span>
+                <span className="exp-years">Williams</span>
+                <span className="exp-label">Construction</span>
+                <span className="exp-sub">Gradimo z vizijo in kakovostjo</span>
               </div>
             </div>
 
@@ -111,11 +109,11 @@ export const About = ({ variant = 'preview' }) => {
               <div className="director-quote-box">
                 <Quote size={28} className="quote-icon" />
                 <p className="director-quote-text">
-                  "Ko so delavci obravnavani s spoštovanjem, pravočasno plačani in vodeni v svojem jeziku, dosegajo mojstrstvo najvišjega evropskega ranga."
+                  "Pri William Construction verjamemo, da so trdni temelji osnova vsakega uspešnega sodelovanja. Zgradimo vašo prihodnost skupaj."
                 </p>
                 <div className="director-profile">
-                  <strong>Toushif Williams</strong>
-                  <span>Direktor, Williams Services d.o.o.</span>
+                  <strong>Williams Construction</strong>
+                  <span>Zanesljiv partner v gradbeništvu</span>
                 </div>
               </div>
             )}
@@ -125,17 +123,21 @@ export const About = ({ variant = 'preview' }) => {
           <FadeIn direction="up" delay={0.2} className="about-content-col">
             <div className="about-story-paragraphs">
               <p className="lead-paragraph">
-                <strong>Williams Services</strong> je podjetje, ki je zraslo iz resničnih izkušenj na gradbiščih in ne iz pisarne. Naš direktor, <strong>Toushif Williams</strong>, izhaja neposredno iz operativnega dela ter je vrsto let delal ramo ob rami z azijskimi delavci, pri čemer je temeljito spoznal njihovo kulturo, jezik, delovno disciplino in načine dela.
+                Dobrodošli pri <strong>William Construction</strong>, vašem zaupanja vrednem partnerju na področju gradbeništva in celovitih gradbenih storitev. Že vrsto let gradimo z vizijo, natančnostjo in nepopustljivo predanostjo kakovosti.
               </p>
 
               <p>
-                Medtem ko večina podjetij pripelje delavce brez razumevanja njihovih navad, komunikacije ali potreb po nadzoru – kar povzroča zamude in slabšo kakovost –, Williams Services deluje drugače. Toushif Williams osebno komunicira z delavci, redno preverja njihovo počutje, skrbi za motivacijo in zagotavlja, da je vsaka naloga jasno razumljena v jeziku, ki ga delavci obvladajo.
+                Naša ponudba obsega celoten spekter gradbenih del – od začetnih temeljev in arhitekturnih načrtov pa vse do zaključnih del ter podpisovanja pogodbenih projektov za stanovanjske in poslovne objekte. Zavedamo se, da gradnja ni le postavljanje sten, temveč uresničevanje vaših sanj in ustvarjanje prostorov, kjer se prepletata varnost in estetika.
               </p>
 
               <p>
-                Ta pristop zagotavlja trden nadzor, višjo produktivnost in stalno kakovost na slovenskih gradbiščih.
+                Pri <strong>William Construction</strong> verjamemo, da so trdni temelji osnova vsakega uspešnega sodelovanja. Zgradimo vašo prihodnost skupaj.
               </p>
             </div>
+
+            <h4 className="about-benefits-heading">
+              Zakaj izbrati nas?
+            </h4>
 
             {/* 4 Benefit Cards Grid */}
             <div className="about-benefits-grid">
@@ -182,9 +184,9 @@ export const About = ({ variant = 'preview' }) => {
         {isFull && (
           <div className="about-extended-content">
             <div className="extended-title-wrap">
-              <h3 className="extended-title">Naša vodilna operativna načela</h3>
+              <h3 className="extended-title">Zakaj izbrati nas?</h3>
               <p className="extended-subtitle">
-                Kako se naša delovna kultura prenaša v zanesljivo izvedbo na vašem gradbišču.
+                Naša načela in zaveza k vrhunski gradbeni kakovosti pri vsakem projektu.
               </p>
             </div>
 
@@ -207,19 +209,19 @@ export const About = ({ variant = 'preview' }) => {
             <div className="about-stats-bar">
               <div className="stat-box">
                 <span className="stat-number">100%</span>
-                <span className="stat-label">Skladnost s slovensko zakonodajo</span>
+                <span className="stat-label">Predanost kakovosti in trdnosti</span>
               </div>
               <div className="stat-box">
                 <span className="stat-number">24/7</span>
-                <span className="stat-label">Dvojezična podpora na gradbišču</span>
+                <span className="stat-label">Zanesljiva podpora naročnikom</span>
               </div>
               <div className="stat-box">
                 <span className="stat-number">0</span>
-                <span className="stat-label">Skrbi z dovoljenji ali vizumi za naročnike</span>
+                <span className="stat-label">Zamud pri dogovorjenih rokih</span>
               </div>
               <div className="stat-box">
                 <span className="stat-number">1.</span>
-                <span className="stat-label">Izbira za kakovostno zidarstvo in varjenje</span>
+                <span className="stat-label">Partner za celovite gradbene rešitve</span>
               </div>
             </div>
           </div>

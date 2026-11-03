@@ -119,6 +119,14 @@
   margin-bottom: 1rem;
 }
 
+.about-benefits-heading {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--charcoal);
+  margin-bottom: 1rem;
+}
+
 /* 4 Benefit Cards Grid */
 .about-benefits-grid {
   display: grid;

@@ -12,15 +12,15 @@ export const AboutPage = () => {
   return (
     <div className="about-page">
       <SEO
-        title="O nas - Zidarstvo, delovna sila in tehnični kader v Sloveniji"
-        description="Spoznajte Williams Services in Williams Constructions, ki ga vodi Toushif Williams. Neposredno terensko vodenje, slovenska zakonodajna skladnost in usposobljeni gradbeni mojstri."
+        title="O nas – Williams Construction"
+        description="Dobrodošli pri William Construction, vašem zaupanja vrednem partnerju na področju gradbeništva in celovitih gradbenih storitev. Že vrsto let gradimo z vizijo, natančnostjo in nepopustljivo predanostjo kakovosti."
         canonical="/about"
       />
 
       <PageHero
-        badge="Pregled podjetja"
-        title="O podjetju Williams Services"
-        subtitle="Povezujemo praktične izkušnje z gradbišč z zanesljivim zaposlovanjem mednarodne delovne sile in preglednim vodenjem v Sloveniji."
+        badge="O nas"
+        title="O nas – Williams Construction"
+        subtitle="Dobrodošli pri William Construction, vašem zaupanja vrednem partnerju na področju gradbeništva in celovitih gradbenih storitev. Že vrsto let gradimo z vizijo, natančnostjo in nepopustljivo predanostjo kakovosti."
         breadcrumbs={[{ label: 'O nas' }]}
       />
 

@@ -75,11 +75,11 @@
 }
 
 .topbar-link:hover {
-  color: var(--burnt-orange);
+  color: black;
 }
 
 .topbar-icon {
-  color: var(--burnt-orange);
+  color: var(--light-bg);
 }
 
 .topbar-divider {
