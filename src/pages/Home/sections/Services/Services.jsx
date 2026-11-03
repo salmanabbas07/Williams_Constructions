@@ -50,6 +50,8 @@ export const Services = ({ variant = 'preview' }) => {
                   {/* Image Placeholder */}
                   <div className="service-card-image-wrap">
                     <ImagePlaceholder
+                      src={service.image}
+                      alt={service.imageAlt || service.title}
                       aspectRatio="16/10"
                       category={service.id}
                       filename={service.image}

@@ -38,9 +38,11 @@ export const Compliance = () => {
           {/* Left Column: Visual Showcase */}
           <FadeIn direction="up" delay={0.1} className="compliance-visual-wrap">
             <ImagePlaceholder
+              src="/images/compliance-documents-slovenia.webp"
+              alt="Predhodno preverjena delovna dovoljenja, zdravniški pregledi in potrdila VZD"
               aspectRatio="4/3"
               category="compliance"
-              filename="compliance-documents-slovenia.jpg"
+              filename="compliance-documents-slovenia.webp"
               caption="Predhodno preverjena delovna dovoljenja, zdravniški pregledi in potrdila VZD"
               className="compliance-image"
             />

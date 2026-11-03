@@ -15,7 +15,7 @@ export const servicesData = [
       'Neposreden dvojezični nadzor na terenu za preprečevanje napak pri izvedbi',
       'Popolna skladnost s slovenskimi gradbenimi in varnostnimi predpisi'
     ],
-    image: 'service-masonry.jpg',
+    image: '/images/service-masonry.webp',
     imageAlt: 'Zidarska ekipa Williams Services pri delu na gradbišču v Sloveniji',
     icon: 'Hammer'
   },
@@ -33,7 +33,7 @@ export const servicesData = [
       'Brez administrativnih skrbi glede nastanitve delavcev ali delovnih dovoljenj',
       'Hitro povečanje števila delavcev v konicah gradbene sezone'
     ],
-    image: 'service-subcontracting.jpg',
+    image: '/images/service-subcontracting.webp',
     imageAlt: 'Podizvajalska koordinacija in vodenje gradbene ekipe v Sloveniji',
     icon: 'Building2'
   },
@@ -51,7 +51,7 @@ export const servicesData = [
       'Zagotovljena kakovost za rentgenske (RT/UT) preglede zvarov',
       'Preverjena varilska spričevala in opravljeni izpiti iz varstva pri delu'
     ],
-    image: 'service-welding.jpg',
+    image: '/images/service-welding.webp',
     imageAlt: 'Industrijski varilec pri delu s TIG MIG MAG varilno opremo',
     icon: 'Flame'
   },
@@ -69,7 +69,7 @@ export const servicesData = [
       'Dnevni pregledi strojev in skrbno osnovno vzdrževanje',
       'Visoka osredotočenost na varnost za zmanjšanje tveganj na delovišču'
     ],
-    image: 'service-operators.jpg',
+    image: '/images/service-operators.webp',
     imageAlt: 'Strojnik v kabini bagra na gradbišču v Sloveniji',
     icon: 'Truck'
   },
@@ -87,7 +87,7 @@ export const servicesData = [
       'Zagotovljena takojšnja zamenjava delavca, v kolikor profil ne ustreza',
       'Stroškovno učinkovito prilagajanje obsega delavcev vašemu denarnemu toku'
     ],
-    image: 'service-staffing.jpg',
+    image: '/images/service-staffing.webp',
     imageAlt: 'Koordinacija začasnega zaposlovanja in kadrovska podpora v Sloveniji',
     icon: 'Users'
   },
@@ -105,7 +105,7 @@ export const servicesData = [
       'Visoka delovna etika, točnost in odlična prisotnost na delu',
       'Polno seznanjeni s slovenskimi predpisi o varnosti in zdravju pri delu'
     ],
-    image: 'service-workers.jpg',
+    image: '/images/service-workers.webp',
     imageAlt: 'Kvalificirani gradbeni delavci pri montaži nosilne konstrukcije',
     icon: 'HardHat'
   }
