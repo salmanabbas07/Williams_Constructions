@@ -5,7 +5,7 @@
   width: 100%;
   overflow: hidden;
   border-radius: var(--radius-md);
-  background-color: var(--navy-darker);
+  background-color: var(--charcoal);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -31,7 +31,7 @@
   align-items: center;
   justify-content: center;
   padding: 1.5rem;
-  background: linear-gradient(135deg, #022B58 0%, #011E3D 60%, #081B30 100%);
+  background: linear-gradient(135deg, #292724 0%, #594034 60%, #1E1C1A 100%);
   text-align: center;
   user-select: none;
 }
@@ -52,7 +52,7 @@
   right: -30%;
   width: 70%;
   height: 70%;
-  background: radial-gradient(circle, rgba(223, 161, 26, 0.15) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(184, 92, 56, 0.25) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -70,18 +70,18 @@
   width: 52px;
   height: 52px;
   border-radius: 50%;
-  background: rgba(223, 161, 26, 0.12);
-  border: 1px solid rgba(223, 161, 26, 0.35);
+  background: rgba(184, 92, 56, 0.2);
+  border: 1px solid rgba(184, 92, 56, 0.45);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--primary-gold);
+  color: var(--burnt-orange);
   transition: transform var(--transition-normal);
 }
 
 .image-placeholder-container:hover .placeholder-icon-wrap {
   transform: scale(1.1);
-  background: rgba(223, 161, 26, 0.2);
+  background: rgba(184, 92, 56, 0.35);
 }
 
 .placeholder-icon {
@@ -104,15 +104,15 @@
   gap: 0.35rem;
   font-family: monospace;
   font-size: 0.725rem;
-  color: rgba(215, 184, 103, 0.85);
+  color: var(--warm-white);
   background: rgba(0, 0, 0, 0.3);
   padding: 0.2rem 0.55rem;
   border-radius: 4px;
-  border: 1px dashed rgba(223, 161, 26, 0.3);
+  border: 1px dashed rgba(184, 92, 56, 0.4);
 }
 
 .placeholder-filename .inline-icon {
-  color: var(--primary-gold);
+  color: var(--burnt-orange);
 }
 
 .placeholder-badge {
@@ -133,5 +133,5 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background-color: var(--primary-gold);
+  background-color: var(--burnt-orange);
 }

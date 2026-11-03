@@ -15,18 +15,18 @@
   align-items: flex-start;
   gap: 1rem;
   padding: 1.25rem 1.5rem;
-  background-color: var(--light-bg);
-  border: 1px solid rgba(223, 161, 26, 0.4);
-  border-left: 4px solid var(--primary-gold);
+  background-color: var(--sand-beige);
+  border: 1px solid rgba(184, 92, 56, 0.4);
+  border-left: 4px solid var(--burnt-orange);
   border-radius: var(--radius-sm);
   margin-bottom: 2.5rem;
   font-size: 0.9rem;
-  color: var(--dark-navy);
+  color: var(--charcoal);
   line-height: 1.5;
 }
 
 .legal-notice-box .notice-icon {
-  color: var(--primary-gold);
+  color: var(--burnt-orange);
   flex-shrink: 0;
   margin-top: 2px;
 }
@@ -39,7 +39,7 @@
 
 .policy-section h2 {
   font-size: 1.45rem;
-  color: var(--dark-navy);
+  color: var(--charcoal);
   margin-bottom: 0.85rem;
   padding-bottom: 0.45rem;
   border-bottom: 1px solid var(--border-light);
@@ -67,7 +67,7 @@
 }
 
 .policy-section strong {
-  color: var(--dark-navy);
+  color: var(--charcoal);
 }
 
 .controller-details {
@@ -81,12 +81,12 @@
 .controller-details strong {
   display: block;
   font-size: 1.05rem;
-  color: var(--dark-navy);
+  color: var(--charcoal);
   margin-bottom: 0.35rem;
 }
 
 .controller-details p {
   margin: 0;
   font-size: 0.925rem;
-  color: var(--slate-blue);
+  color: var(--text-secondary);
 }

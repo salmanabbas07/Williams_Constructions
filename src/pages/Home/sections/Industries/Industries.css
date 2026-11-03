@@ -17,18 +17,18 @@
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  background-color: #FFFFFF;
+  background-color: var(--warm-white);
   padding: 0.6rem 1.2rem;
   border-radius: var(--radius-full);
   border: 1px solid var(--border-color);
   font-size: 0.88rem;
   font-weight: 600;
-  color: var(--dark-navy);
+  color: var(--charcoal);
   box-shadow: var(--soft-shadow);
 }
 
 .pill-check {
-  color: var(--primary-gold);
+  color: var(--burnt-orange);
   flex-shrink: 0;
 }
 
@@ -47,7 +47,7 @@
 }
 
 .industry-card {
-  background-color: var(--white);
+  background-color: var(--warm-white);
   border-radius: var(--radius-md);
   border: 1px solid var(--border-color);
   overflow: hidden;
@@ -56,17 +56,40 @@
   height: 100%;
   width: 100%;
   transition: all var(--transition-normal);
-  box-shadow: 0 4px 16px rgba(2, 43, 88, 0.04);
+  box-shadow: 0 4px 16px rgba(41, 39, 36, 0.05);
 }
 
 .industry-card:hover {
   transform: translateY(-6px);
-  border-color: rgba(223, 161, 26, 0.5);
+  border-color: rgba(184, 92, 56, 0.45);
   box-shadow: var(--card-hover-shadow);
 }
 
 .industry-card-img-wrap {
   position: relative;
+}
+
+/* Subtle Burnt Orange Gradient Overlay */
+.industry-card .image-placeholder-container::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background: linear-gradient(
+    135deg,
+    rgba(41, 39, 36, 0.10),
+    rgba(184, 92, 56, 0.25)
+  );
+  transition: opacity 0.3s ease, background 0.3s ease;
+}
+
+.industry-card:hover .image-placeholder-container::after {
+  background: linear-gradient(
+    135deg,
+    rgba(41, 39, 36, 0.15),
+    rgba(184, 92, 56, 0.35)
+  );
 }
 
 .industry-tag-badge {
@@ -77,13 +100,13 @@
   align-items: center;
   gap: 0.4rem;
   padding: 0.35rem 0.8rem;
-  background-color: rgba(2, 43, 88, 0.9);
-  color: var(--primary-gold);
+  background-color: rgba(41, 39, 36, 0.92);
+  color: var(--warm-white);
   border-radius: var(--radius-sm);
   font-size: 0.75rem;
   font-weight: 700;
   backdrop-filter: blur(6px);
-  border: 1px solid rgba(223, 161, 26, 0.3);
+  border: 1px solid rgba(184, 92, 56, 0.35);
   z-index: 2;
 }
 
@@ -97,7 +120,7 @@
 .industry-title {
   font-size: 1.3rem;
   font-weight: 700;
-  color: var(--dark-navy);
+  color: var(--charcoal);
   margin-bottom: 0.65rem;
   min-height: 3.35rem;
 }
@@ -131,7 +154,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--dark-navy);
+  color: var(--charcoal);
   margin-bottom: 0.5rem;
 }
 
@@ -143,8 +166,8 @@
 
 .role-tag {
   font-size: 0.75rem;
-  background-color: #FFFFFF;
-  color: var(--slate-blue);
+  background-color: var(--warm-white);
+  color: var(--charcoal);
   padding: 0.2rem 0.55rem;
   border-radius: 4px;
   border: 1px solid var(--border-color);
@@ -169,17 +192,17 @@
   font-family: var(--font-heading);
   font-size: 0.925rem;
   font-weight: 700;
-  color: var(--dark-navy);
+  color: var(--charcoal);
   transition: color var(--transition-fast);
 }
 
 .industry-link-arrow {
-  color: var(--primary-gold);
+  color: var(--burnt-orange);
   transition: transform var(--transition-fast);
 }
 
 .industry-link:hover {
-  color: var(--primary-gold);
+  color: var(--deep-terracotta);
 }
 
 .industry-link:hover .industry-link-arrow {

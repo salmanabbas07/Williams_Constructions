@@ -18,7 +18,7 @@
   left: 5%;
   right: 5%;
   height: 3px;
-  background: linear-gradient(to right, var(--primary-gold), var(--dark-navy), var(--primary-gold));
+  background: linear-gradient(to right, var(--burnt-orange), var(--charcoal), var(--burnt-orange));
   z-index: 1;
 }
 
@@ -44,17 +44,17 @@
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background-color: var(--white);
-  border: 3px solid var(--primary-gold);
+  background-color: var(--warm-white);
+  border: 3px solid var(--burnt-orange);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 14px rgba(223, 161, 26, 0.3);
+  box-shadow: 0 4px 14px rgba(184, 92, 56, 0.3);
   transition: all var(--transition-fast);
 }
 
 .timeline-step-card:hover .timeline-node {
-  background-color: var(--primary-gold);
+  background: var(--btn-primary-gradient);
   transform: scale(1.12);
 }
 
@@ -62,18 +62,18 @@
   font-family: var(--font-heading);
   font-size: 0.95rem;
   font-weight: 800;
-  color: var(--dark-navy);
+  color: var(--charcoal);
   transition: color var(--transition-fast);
 }
 
 .timeline-step-card:hover .step-number {
-  color: #001C3A;
+  color: #FFFFFF;
 }
 
 .timeline-content-card {
   width: 100%;
-  background-color: var(--light-bg);
-  border: 1px solid var(--border-light);
+  background-color: var(--sand-beige);
+  border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
   padding: 1.4rem 1.1rem;
   text-align: center;
@@ -85,8 +85,8 @@
 }
 
 .timeline-step-card:hover .timeline-content-card {
-  background-color: #FFFFFF;
-  border-color: rgba(223, 161, 26, 0.45);
+  background-color: var(--warm-white);
+  border-color: rgba(184, 92, 56, 0.5);
   box-shadow: var(--card-hover-shadow);
   transform: translateY(-4px);
 }
@@ -95,8 +95,8 @@
   width: 40px;
   height: 40px;
   border-radius: var(--radius-sm);
-  background-color: rgba(2, 43, 88, 0.08);
-  color: var(--dark-navy);
+  background-color: rgba(41, 39, 36, 0.08);
+  color: var(--charcoal);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -105,8 +105,8 @@
 }
 
 .timeline-step-card:hover .timeline-icon-box {
-  background-color: var(--primary-gold);
-  color: var(--dark-navy);
+  background: var(--btn-primary-gradient);
+  color: #FFFFFF;
 }
 
 .timeline-duration-tag {
@@ -116,8 +116,8 @@
   font-size: 0.72rem;
   font-weight: 600;
   text-transform: uppercase;
-  color: var(--primary-gold);
-  background-color: rgba(223, 161, 26, 0.1);
+  color: var(--burnt-orange);
+  background-color: rgba(184, 92, 56, 0.15);
   padding: 0.15rem 0.5rem;
   border-radius: var(--radius-full);
   margin-bottom: 0.65rem;
@@ -126,7 +126,7 @@
 .timeline-step-title {
   font-size: 0.95rem;
   font-weight: 700;
-  color: var(--dark-navy);
+  color: var(--charcoal);
   line-height: 1.35;
   margin-bottom: 0.65rem;
   min-height: 2.6rem;
@@ -143,16 +143,16 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
-  background-color: var(--dark-navy);
+  background: var(--dark-bg-gradient);
   color: #FFFFFF;
   padding: 2.5rem;
   border-radius: var(--radius-lg);
   margin-bottom: 3rem;
-  border-left: 4px solid var(--primary-gold);
+  border-left: 4px solid var(--burnt-orange);
 }
 
 .guarantee-col h4 {
-  color: var(--primary-gold);
+  color: var(--burnt-orange);
   font-size: 1.15rem;
   margin-bottom: 0.5rem;
 }

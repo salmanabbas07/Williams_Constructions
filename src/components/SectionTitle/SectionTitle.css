@@ -25,9 +25,9 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--primary-gold);
-  background-color: rgba(223, 161, 26, 0.1);
-  border: 1px solid rgba(223, 161, 26, 0.25);
+  color: var(--burnt-orange);
+  background-color: rgba(184, 92, 56, 0.12);
+  border: 1px solid rgba(184, 92, 56, 0.28);
   padding: 0.35rem 0.9rem;
   border-radius: var(--radius-full);
   margin-bottom: 0.85rem;
@@ -37,13 +37,13 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background-color: var(--primary-gold);
+  background-color: var(--burnt-orange);
 }
 
 .section-badge-dark {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.12);
   color: var(--light-gold);
-  border-color: rgba(215, 184, 103, 0.3);
+  border-color: rgba(209, 122, 78, 0.4);
 }
 
 .section-badge-dark .section-badge-dot {
@@ -53,7 +53,7 @@
 .section-heading {
   font-size: clamp(1.85rem, 3.5vw, 2.65rem);
   font-weight: 700;
-  color: var(--dark-navy);
+  color: var(--charcoal);
   letter-spacing: -0.02em;
   line-height: 1.2;
 }
@@ -82,14 +82,14 @@
 .divider-line {
   height: 3px;
   width: 48px;
-  background-color: var(--primary-gold);
+  background-color: var(--burnt-orange);
   border-radius: 2px;
 }
 
 .divider-accent {
   height: 3px;
   width: 14px;
-  background-color: var(--dark-navy);
+  background-color: var(--charcoal);
   border-radius: 2px;
 }
 

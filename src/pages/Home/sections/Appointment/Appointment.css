@@ -8,16 +8,16 @@
   display: grid;
   grid-template-columns: 1fr 1.6fr;
   gap: clamp(2rem, 4vw, 4rem);
-  background-color: var(--white);
+  background-color: var(--warm-white);
   border-radius: var(--radius-xl);
-  box-shadow: 0 10px 40px rgba(2, 43, 88, 0.08);
+  box-shadow: 0 10px 40px rgba(41, 39, 36, 0.1);
   border: 1px solid var(--border-color);
   overflow: hidden;
 }
 
 /* Side Info Column */
 .appointment-info-col {
-  background: linear-gradient(135deg, var(--dark-navy) 0%, #011E3D 100%);
+  background: var(--dark-bg-gradient);
   color: #FFFFFF;
   padding: clamp(2.5rem, 4vw, 3.5rem);
   display: flex;
@@ -33,13 +33,13 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--primary-gold);
-  background: rgba(223, 161, 26, 0.15);
+  color: var(--warm-white);
+  background: rgba(184, 92, 56, 0.25);
   padding: 0.35rem 0.85rem;
   border-radius: var(--radius-full);
   margin-bottom: 1.25rem;
   align-self: flex-start;
-  border: 1px solid rgba(223, 161, 26, 0.3);
+  border: 1px solid rgba(184, 92, 56, 0.45);
 }
 
 .info-title {
@@ -74,13 +74,13 @@
   width: 40px;
   height: 40px;
   border-radius: var(--radius-sm);
-  background: rgba(223, 161, 26, 0.15);
-  color: var(--primary-gold);
+  background: rgba(184, 92, 56, 0.22);
+  color: var(--burnt-orange);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  border: 1px solid rgba(223, 161, 26, 0.3);
+  border: 1px solid rgba(184, 92, 56, 0.45);
 }
 
 .info-contact-item strong {
@@ -88,7 +88,7 @@
   font-size: 0.825rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--light-gold);
+  color: var(--burnt-orange);
   margin-bottom: 2px;
 }
 
@@ -103,7 +103,7 @@
   padding: 1rem;
   background: rgba(255, 255, 255, 0.06);
   border-radius: var(--radius-sm);
-  border: 1px dashed rgba(223, 161, 26, 0.3);
+  border: 1px dashed rgba(184, 92, 56, 0.45);
   display: flex;
   align-items: flex-start;
   gap: 0.65rem;
@@ -113,13 +113,13 @@
 }
 
 .note-icon {
-  color: var(--primary-gold);
+  color: var(--burnt-orange);
   flex-shrink: 0;
   margin-top: 2px;
 }
 
 .info-architecture-note code {
-  color: var(--light-gold);
+  color: var(--burnt-orange);
   background: rgba(0, 0, 0, 0.25);
   padding: 0.1rem 0.3rem;
   border-radius: 3px;
@@ -207,7 +207,7 @@
   font-family: var(--font-heading);
   font-size: 0.88rem;
   font-weight: 600;
-  color: var(--dark-navy);
+  color: var(--charcoal);
 }
 
 .form-label .req {
@@ -221,8 +221,8 @@
   padding: 0.75rem 1rem;
   font-family: var(--font-body);
   font-size: 0.95rem;
-  color: var(--text-primary);
-  background-color: var(--light-bg);
+  color: var(--charcoal);
+  background-color: var(--sand-beige);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-sm);
   transition: all var(--transition-fast);
@@ -232,9 +232,9 @@
 .form-input:focus,
 .form-select:focus,
 .form-textarea:focus {
-  background-color: #FFFFFF;
-  border-color: var(--primary-gold);
-  box-shadow: 0 0 0 3px rgba(223, 161, 26, 0.15);
+  background-color: var(--warm-white);
+  border-color: var(--burnt-orange);
+  box-shadow: 0 0 0 3px rgba(184, 92, 56, 0.2);
 }
 
 .input-error {
@@ -257,7 +257,7 @@
   right: 12px;
   top: 50%;
   transform: translateY(-50%);
-  color: var(--slate-blue);
+  color: var(--burnt-orange);
   pointer-events: none;
 }
 

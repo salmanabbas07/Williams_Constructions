@@ -21,17 +21,17 @@
 }
 
 .accordion-item {
-  background-color: var(--white);
+  background-color: var(--warm-white);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
   overflow: hidden;
   transition: all var(--transition-normal);
-  box-shadow: 0 2px 10px rgba(2, 43, 88, 0.03);
+  box-shadow: 0 2px 10px rgba(41, 39, 36, 0.04);
 }
 
 .accordion-item:hover,
 .accordion-item.open {
-  border-color: rgba(223, 161, 26, 0.5);
+  border-color: rgba(184, 92, 56, 0.45);
   box-shadow: var(--card-hover-shadow);
 }
 
@@ -52,20 +52,20 @@
   font-family: var(--font-heading);
   font-size: 1.05rem;
   font-weight: 700;
-  color: var(--dark-navy);
+  color: var(--charcoal);
   line-height: 1.4;
   transition: color var(--transition-fast);
 }
 
 .accordion-item.open .accordion-question {
-  color: var(--primary-gold);
+  color: var(--burnt-orange);
 }
 
 .accordion-icon-wrap {
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background-color: var(--light-bg);
+  background-color: var(--sand-beige);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -74,13 +74,13 @@
 }
 
 .accordion-item.open .accordion-icon-wrap {
-  background-color: var(--primary-gold);
-  color: var(--dark-navy);
+  background: var(--btn-primary-gradient);
+  color: #FFFFFF;
 }
 
 .accordion-chevron {
   transition: transform var(--transition-normal);
-  color: var(--dark-navy);
+  color: var(--charcoal);
 }
 
 .accordion-chevron.rotate {
@@ -115,7 +115,7 @@
   align-items: flex-start;
   gap: 0.75rem;
   padding: 1.1rem 1.4rem;
-  background-color: #FFFFFF;
+  background-color: var(--warm-white);
   border: 1px dashed var(--border-color);
   border-radius: var(--radius-sm);
   font-size: 0.85rem;
@@ -123,14 +123,14 @@
 }
 
 .notice-icon {
-  color: var(--primary-gold);
+  color: var(--burnt-orange);
   flex-shrink: 0;
   margin-top: 2px;
 }
 
 .faq-editable-notice code {
-  color: var(--dark-navy);
-  background-color: var(--light-bg);
+  color: var(--charcoal);
+  background-color: var(--sand-beige);
   padding: 0.1rem 0.35rem;
   border-radius: 3px;
   font-weight: 600;
@@ -143,11 +143,11 @@
 }
 
 .assistance-card {
-  background-color: var(--dark-navy);
+  background: var(--dark-bg-gradient);
   color: #FFFFFF;
   padding: clamp(2rem, 3.5vw, 2.8rem);
   border-radius: var(--radius-lg);
-  border-top: 4px solid var(--primary-gold);
+  border-top: 4px solid var(--burnt-orange);
   box-shadow: var(--elevated-shadow);
 }
 
@@ -155,8 +155,8 @@
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background-color: rgba(223, 161, 26, 0.2);
-  color: var(--primary-gold);
+  background-color: rgba(184, 92, 56, 0.25);
+  color: var(--burnt-orange);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -197,7 +197,7 @@
 }
 
 .assistance-link:hover {
-  color: var(--primary-gold);
+  color: var(--burnt-orange);
 }
 
 .assistance-card .w-100 {

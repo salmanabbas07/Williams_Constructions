@@ -2,11 +2,11 @@
 
 .page-hero-banner {
   position: relative;
-  background: linear-gradient(135deg, var(--dark-navy) 0%, #011E3D 100%);
+  background: var(--dark-bg-gradient);
   color: #FFFFFF;
   padding: clamp(3rem, 5vw, 4.5rem) 0 clamp(3.5rem, 6vw, 5rem);
   overflow: hidden;
-  border-bottom: 3px solid var(--primary-gold);
+  border-bottom: 3px solid var(--burnt-orange);
 }
 
 .page-hero-blueprint {
@@ -53,7 +53,7 @@
 }
 
 .breadcrumb-link:hover {
-  color: var(--primary-gold);
+  color: var(--light-gold);
 }
 
 .breadcrumb-chevron {
@@ -61,7 +61,7 @@
 }
 
 .breadcrumb-current {
-  color: var(--primary-gold);
+  color: var(--light-gold);
   font-weight: 600;
 }
 
@@ -74,9 +74,9 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--primary-gold);
-  background-color: rgba(223, 161, 26, 0.15);
-  border: 1px solid rgba(223, 161, 26, 0.3);
+  color: var(--light-gold);
+  background-color: rgba(184, 92, 56, 0.22);
+  border: 1px solid rgba(184, 92, 56, 0.45);
   padding: 0.3rem 0.8rem;
   border-radius: var(--radius-full);
   margin-bottom: 0.85rem;
@@ -86,7 +86,7 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background-color: var(--primary-gold);
+  background-color: var(--burnt-orange);
 }
 
 .page-hero-title {

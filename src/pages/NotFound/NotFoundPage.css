@@ -13,7 +13,7 @@
   margin: 0 auto;
   text-align: center;
   padding: clamp(2.5rem, 5vw, 4rem) clamp(1.5rem, 4vw, 3rem);
-  background-color: var(--white);
+  background-color: var(--warm-white);
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-color);
   box-shadow: var(--soft-shadow);
@@ -23,8 +23,8 @@
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background-color: rgba(223, 161, 26, 0.15);
-  color: var(--primary-gold);
+  background-color: rgba(184, 92, 56, 0.15);
+  color: var(--burnt-orange);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -32,7 +32,7 @@
 }
 
 .construction-icon {
-  color: var(--primary-gold);
+  color: var(--burnt-orange);
 }
 
 .not-found-badge {
@@ -40,8 +40,8 @@
   font-size: 0.85rem;
   font-weight: 800;
   text-transform: uppercase;
-  color: var(--primary-gold);
-  background-color: rgba(223, 161, 26, 0.1);
+  color: var(--burnt-orange);
+  background-color: rgba(184, 92, 56, 0.15);
   padding: 0.3rem 0.8rem;
   border-radius: var(--radius-full);
   margin-bottom: 1rem;
@@ -49,7 +49,7 @@
 
 .not-found-title {
   font-size: clamp(1.6rem, 2.8vw, 2.2rem);
-  color: var(--dark-navy);
+  color: var(--charcoal);
   margin-bottom: 1rem;
 }
 

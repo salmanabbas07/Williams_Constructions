@@ -1,27 +1,41 @@
 :root {
-  /* Brand Colors */
-  --primary-gold: #DFA11A;
-  --light-gold: #D7B867;
-  --dark-navy: #022B58;
-  --gold-accent: #DEA019;
-  --slate-blue: #50647A;
-  --white: #FFFFFF;
-  --light-bg: #F8F9FB;
+  /* Brand Colors - Premium Burnt Orange + Warm White + Charcoal Theme */
+  --burnt-orange: #B85C38;
+  --deep-terracotta: #8F452F;
+  --charcoal: #292724;
+  --warm-white: #FAF8F4;
+  --sand-beige: #E9DFD2;
+
+  /* Aliased Design Tokens */
+  --primary-gold: #B85C38;
+  --light-gold: #D17A4E;
+  --dark-navy: #292724;
+  --gold-accent: #8F452F;
+  --slate-blue: #544F49;
+  --white: #FAF8F4;
+  --light-bg: #E9DFD2;
+
+  /* Gradients */
+  --btn-primary-gradient: linear-gradient(135deg, #A94F32 0%, #D17A4E 100%);
+  --btn-primary-hover-gradient: linear-gradient(135deg, #8F452F 0%, #B85C38 100%);
+  --dark-bg-gradient: linear-gradient(135deg, #292724 0%, #594034 100%);
+  --card-image-overlay: linear-gradient(135deg, rgba(41, 39, 36, 0.10), rgba(184, 92, 56, 0.25));
+  --card-image-overlay-hover: linear-gradient(135deg, rgba(41, 39, 36, 0.15), rgba(184, 92, 56, 0.35));
 
   /* Derived & Neutral Colors */
-  --navy-darker: #011E3D;
-  --navy-light: #0A3D75;
-  --navy-subtle: #EDF3F9;
-  --text-primary: #0F1D2F;
-  --text-secondary: #50647A;
-  --text-light: #7E90A3;
-  --text-white: #FFFFFF;
-  --border-color: #E2E8F0;
-  --border-light: #F0F4F8;
-  --card-bg: #FFFFFF;
-  --card-hover-shadow: 0 16px 36px rgba(2, 43, 88, 0.08);
-  --soft-shadow: 0 6px 20px rgba(2, 43, 88, 0.04);
-  --elevated-shadow: 0 20px 40px rgba(2, 43, 88, 0.12);
+  --navy-darker: #1E1C1A;
+  --navy-light: #453E38;
+  --navy-subtle: #EFE8DE;
+  --text-primary: #292724;
+  --text-secondary: #57524C;
+  --text-light: #7E766E;
+  --text-white: #FAF8F4;
+  --border-color: #DCD2C3;
+  --border-light: #EBE3D7;
+  --card-bg: #FAF8F4;
+  --card-hover-shadow: 0 16px 36px rgba(41, 39, 36, 0.12);
+  --soft-shadow: 0 6px 20px rgba(41, 39, 36, 0.06);
+  --elevated-shadow: 0 20px 40px rgba(41, 39, 36, 0.18);
   
   /* Status Colors */
   --success: #10B981;

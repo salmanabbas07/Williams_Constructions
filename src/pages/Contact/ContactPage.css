@@ -13,7 +13,7 @@
 }
 
 .contact-feature-card {
-  background-color: var(--white);
+  background-color: var(--warm-white);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
   padding: 2rem 1.6rem;
@@ -22,12 +22,12 @@
   align-items: center;
   text-align: center;
   transition: all var(--transition-normal);
-  box-shadow: 0 4px 14px rgba(2, 43, 88, 0.04);
+  box-shadow: 0 4px 14px rgba(41, 39, 36, 0.05);
 }
 
 .contact-feature-card:hover {
   transform: translateY(-5px);
-  border-color: var(--primary-gold);
+  border-color: var(--burnt-orange);
   box-shadow: var(--card-hover-shadow);
 }
 
@@ -35,8 +35,8 @@
   width: 52px;
   height: 52px;
   border-radius: 50%;
-  background-color: rgba(223, 161, 26, 0.15);
-  color: var(--primary-gold);
+  background-color: rgba(184, 92, 56, 0.15);
+  color: var(--burnt-orange);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -45,14 +45,14 @@
 }
 
 .contact-feature-card:hover .contact-feature-icon {
-  background-color: var(--primary-gold);
-  color: var(--dark-navy);
+  background: var(--btn-primary-gradient);
+  color: #FFFFFF;
 }
 
 .feature-title {
   font-size: 1.15rem;
   font-weight: 700;
-  color: var(--dark-navy);
+  color: var(--charcoal);
   margin-bottom: 0.5rem;
 }
 
@@ -71,7 +71,7 @@
 }
 
 .highlight-gold {
-  color: var(--primary-gold);
+  color: var(--burnt-orange);
   font-weight: 700;
 }
 
@@ -84,7 +84,7 @@
 
 .contact-phone-item,
 .contact-email-item {
-  color: var(--dark-navy);
+  color: var(--charcoal);
   font-weight: 600;
   font-size: 0.95rem;
   transition: color var(--transition-fast);
@@ -92,7 +92,7 @@
 
 .contact-phone-item:hover,
 .contact-email-item:hover {
-  color: var(--primary-gold);
+  color: var(--burnt-orange);
 }
 
 /* Map Preview Card */
@@ -105,7 +105,7 @@
   position: relative;
   height: 260px;
   border-radius: var(--radius-lg);
-  background: linear-gradient(135deg, #022B58 0%, #031D38 100%);
+  background: var(--dark-bg-gradient);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -138,25 +138,25 @@
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background: rgba(223, 161, 26, 0.2);
+  background: rgba(184, 92, 56, 0.25);
   margin-bottom: 0.75rem;
   animation: pulsePin 2s infinite;
 }
 
 @keyframes pulsePin {
   0% {
-    box-shadow: 0 0 0 0 rgba(223, 161, 26, 0.5);
+    box-shadow: 0 0 0 0 rgba(184, 92, 56, 0.5);
   }
   70% {
-    box-shadow: 0 0 0 14px rgba(223, 161, 26, 0);
+    box-shadow: 0 0 0 14px rgba(184, 92, 56, 0);
   }
   100% {
-    box-shadow: 0 0 0 0 rgba(223, 161, 26, 0);
+    box-shadow: 0 0 0 0 rgba(184, 92, 56, 0);
   }
 }
 
 .map-pin-icon {
-  color: var(--primary-gold);
+  color: var(--burnt-orange);
 }
 
 .map-card-content h4 {
@@ -175,7 +175,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  color: var(--primary-gold);
+  color: var(--warm-white);
   font-size: 0.85rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -187,8 +187,8 @@
 }
 
 .map-external-link:hover {
-  background-color: var(--primary-gold);
-  color: var(--dark-navy);
+  background-color: var(--burnt-orange);
+  color: #FFFFFF;
 }
 
 @media (max-width: 1024px) {

@@ -17,7 +17,7 @@ html {
 body {
   font-family: var(--font-body);
   color: var(--text-primary);
-  background-color: var(--white);
+  background-color: var(--warm-white);
   line-height: 1.6;
   overflow-x: hidden;
   min-height: 100vh;
@@ -37,7 +37,7 @@ main {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
-  color: var(--dark-navy);
+  color: var(--charcoal);
   font-weight: 700;
   line-height: 1.25;
 }
@@ -106,12 +106,12 @@ ul, ol {
 }
 
 .bg-navy {
-  background-color: var(--dark-navy);
+  background: var(--dark-bg-gradient);
   color: var(--text-white);
 }
 
 .bg-white {
-  background-color: var(--white);
+  background-color: var(--warm-white);
 }
 
 /* Screen Reader Only Utility */
@@ -138,15 +138,15 @@ ul, ol {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  background-color: rgba(223, 161, 26, 0.12);
-  color: var(--primary-gold);
-  border: 1px solid rgba(223, 161, 26, 0.25);
+  background-color: rgba(184, 92, 56, 0.12);
+  color: var(--burnt-orange);
+  border: 1px solid rgba(184, 92, 56, 0.28);
 }
 
 .badge-navy {
-  background-color: rgba(2, 43, 88, 0.08);
-  color: var(--dark-navy);
-  border: 1px solid rgba(2, 43, 88, 0.15);
+  background-color: rgba(41, 39, 36, 0.08);
+  color: var(--charcoal);
+  border: 1px solid rgba(41, 39, 36, 0.18);
 }
 
 /* Accessibility: Reduced Motion */

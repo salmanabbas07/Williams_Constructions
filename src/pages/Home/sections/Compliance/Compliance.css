@@ -27,10 +27,10 @@
   align-items: center;
   gap: 1.25rem;
   padding: 1.4rem 1.6rem;
-  background-color: var(--dark-navy);
+  background: var(--dark-bg-gradient);
   color: #FFFFFF;
   border-radius: var(--radius-md);
-  border-left: 4px solid var(--primary-gold);
+  border-left: 4px solid var(--burnt-orange);
   box-shadow: var(--soft-shadow);
 }
 
@@ -38,8 +38,8 @@
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background-color: rgba(223, 161, 26, 0.2);
-  color: var(--primary-gold);
+  background-color: rgba(184, 92, 56, 0.25);
+  color: var(--burnt-orange);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -71,15 +71,15 @@
   align-items: flex-start;
   gap: 1.25rem;
   padding: 1.4rem 1.6rem;
-  background-color: var(--light-bg);
-  border: 1px solid var(--border-light);
+  background-color: var(--sand-beige);
+  border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
   transition: all var(--transition-normal);
 }
 
 .compliance-block:hover {
-  background-color: #FFFFFF;
-  border-color: rgba(223, 161, 26, 0.5);
+  background-color: var(--warm-white);
+  border-color: rgba(184, 92, 56, 0.6);
   box-shadow: var(--card-hover-shadow);
   transform: translateX(4px);
 }
@@ -96,7 +96,7 @@
   font-family: var(--font-heading);
   font-size: 0.8rem;
   font-weight: 800;
-  color: var(--primary-gold);
+  color: var(--burnt-orange);
   letter-spacing: 0.05em;
 }
 
@@ -104,8 +104,8 @@
   width: 42px;
   height: 42px;
   border-radius: var(--radius-sm);
-  background-color: rgba(2, 43, 88, 0.08);
-  color: var(--dark-navy);
+  background-color: rgba(41, 39, 36, 0.08);
+  color: var(--charcoal);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -113,8 +113,8 @@
 }
 
 .compliance-block:hover .compliance-icon-wrap {
-  background-color: var(--primary-gold);
-  color: var(--dark-navy);
+  background: var(--btn-primary-gradient);
+  color: #FFFFFF;
 }
 
 .compliance-block-content {
@@ -124,14 +124,14 @@
 .compliance-block-title {
   font-size: 1.15rem;
   font-weight: 700;
-  color: var(--dark-navy);
+  color: var(--charcoal);
   margin-bottom: 0.35rem;
 }
 
 .compliance-block-lead {
   font-size: 0.95rem;
   font-weight: 600;
-  color: var(--primary-gold);
+  color: var(--burnt-orange);
   margin-bottom: 0.35rem;
 }
 
