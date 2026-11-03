@@ -66,7 +66,7 @@ export const Hero = () => {
           nextEl: '.hero-nav-btn-next',
           prevEl: '.hero-nav-btn-prev'
         }}
-        loop={true}
+        rewind={true}
         className="hero-swiper"
       >
         {HERO_SLIDES.map((slide) => (

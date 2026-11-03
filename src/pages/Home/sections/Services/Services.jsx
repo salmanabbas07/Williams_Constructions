@@ -45,7 +45,7 @@ export const Services = ({ variant = 'preview' }) => {
             const IconComponent = ICON_MAP[service.icon] || HardHat;
 
             return (
-              <FadeIn key={service.id} delay={idx * 0.08} direction="up">
+              <FadeIn key={service.id} delay={idx * 0.08} direction="up" className="service-card-wrapper">
                 <div id={service.id} className="service-card">
                   {/* Image Placeholder */}
                   <div className="service-card-image-wrap">
