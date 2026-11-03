@@ -53,7 +53,8 @@ export const Hero = () => {
         autoplay={{
           delay: 3500,
           disableOnInteraction: false,
-          pauseOnMouseEnter: true
+          pauseOnMouseEnter: false,
+          waitForTransition: false
         }}
         pagination={{
           clickable: true,
