@@ -75,7 +75,8 @@
 }
 
 .topbar-link:hover {
-  color: black;
+  color: var(--light-gold);
+  
 }
 
 .topbar-icon {
@@ -185,7 +186,7 @@
 
 .nav-link:hover,
 .nav-link.nav-link-active {
-  color: var(--burnt-orange);
+  color: var(--light-gold);
 }
 
 .nav-link::after {
@@ -195,7 +196,7 @@
   left: 0;
   width: 0%;
   height: 2px;
-  background-color: var(--burnt-orange);
+  background-color: var(--light-gold);
   transition: width var(--transition-fast);
 }
 

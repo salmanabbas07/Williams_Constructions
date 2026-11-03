@@ -157,7 +157,7 @@
 }
 
 .social-icon-btn:hover {
-  background-color: var(--deep-terracotta);
+  background-color: var(--light-gold);
   border-color: var(--burnt-orange);
   color: #FFFFFF;
   transform: translateY(-2px);
