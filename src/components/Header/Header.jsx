@@ -28,6 +28,20 @@ export const Header = () => {
   const location = useLocation();
   const dropdownRef = useRef(null);
 
+  const isNavActive = (path) => {
+    const currentPath = location.pathname;
+    if (path === '/') {
+      return currentPath === '/';
+    }
+    if (path === '/projects') {
+      return currentPath === '/projects' || currentPath === '/industries';
+    }
+    if (path === '/faq') {
+      return currentPath === '/faq' || currentPath === '/pogosta-vprasanja' || currentPath === '/Pogosta vprašanja';
+    }
+    return currentPath === path || currentPath.startsWith(`${path}/`);
+  };
+
   useEffect(() => {
     let ticking = false;
 
@@ -126,7 +140,7 @@ export const Header = () => {
                     >
                       <NavLink
                         to={item.path}
-                        className={({ isActive }) => `nav-link ${isActive ? 'nav-link-active' : ''}`}
+                        className={({ isActive }) => `nav-link ${isActive || isNavActive(item.path) ? 'nav-link-active' : ''}`}
                       >
                         {item.label}
                         <ChevronDown size={15} className={`chevron-icon ${isServicesOpen ? 'rotate' : ''}`} />
@@ -159,7 +173,7 @@ export const Header = () => {
                   <li key={item.label} className="nav-item">
                     <NavLink
                       to={item.path}
-                      className={({ isActive }) => `nav-link ${isActive ? 'nav-link-active' : ''}`}
+                      className={({ isActive }) => `nav-link ${isActive || isNavActive(item.path) ? 'nav-link-active' : ''}`}
                     >
                       {item.label}
                     </NavLink>
@@ -206,7 +220,7 @@ export const Header = () => {
                     <div className="mobile-dropdown-header">
                       <Link 
                         to={item.path} 
-                        className="mobile-nav-link"
+                        className={`mobile-nav-link ${isNavActive(item.path) ? 'active' : ''}`}
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
                         {item.label}
@@ -244,7 +258,7 @@ export const Header = () => {
                 <li key={item.label} className="mobile-nav-item">
                   <NavLink
                     to={item.path}
-                    className={({ isActive }) => `mobile-nav-link ${isActive ? 'active' : ''}`}
+                    className={({ isActive }) => `mobile-nav-link ${isActive || isNavActive(item.path) ? 'active' : ''}`}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {item.label}

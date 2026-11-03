@@ -62,10 +62,12 @@ export const Industries = ({ variant = 'preview' }) => {
             const IconComponent = ICON_MAP[item.icon] || Building;
 
             return (
-              <FadeIn key={item.id} delay={idx * 0.08} direction="up">
+              <FadeIn key={item.id} delay={idx * 0.08} direction="up" className="industry-card-wrapper">
                 <div id={item.id} className="industry-card">
                   <div className="industry-card-img-wrap">
                     <ImagePlaceholder
+                      src={item.image}
+                      alt={item.imageAlt || item.title}
                       aspectRatio="16/10"
                       category={item.id}
                       filename={item.image}
@@ -106,7 +108,7 @@ export const Industries = ({ variant = 'preview' }) => {
                           Zahtevajte kader za {item.title}
                         </Button>
                       ) : (
-                        <Link to="/industries" className="industry-link">
+                        <Link to={`/projects#${item.id}`} className="industry-link">
                           <span>Podrobnosti o panogi</span>
                           <ArrowRight size={15} className="industry-link-arrow" />
                         </Link>
@@ -123,7 +125,7 @@ export const Industries = ({ variant = 'preview' }) => {
         {!isFull && (
           <div className="industries-bottom-cta">
             <Button
-              to="/industries"
+              to="/projects"
               variant="secondary"
               size="md"
               icon={ArrowRight}
