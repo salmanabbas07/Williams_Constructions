@@ -121,10 +121,10 @@
   /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12); */
   /* transition: transform var(--transition-fast); */
 }
-
+/* 
 .site-logo:hover {
   transform: scale(1.03);
-}
+} */
 
 /* Desktop Nav Center & Right */
 .desktop-nav-center {
