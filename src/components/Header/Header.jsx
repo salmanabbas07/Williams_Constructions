@@ -119,7 +119,7 @@ export const Header = () => {
           {/* Logo */}
           <Link to="/" className="site-logo" aria-label="Williams Constructions Domov">
             <img 
-              src="/images/salman_logo_main.png" 
+              src="/images/newLOGO.png" 
               alt="Williams Constructions Group" 
               className="header-brand-logo"
             />

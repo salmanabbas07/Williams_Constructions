@@ -135,6 +135,8 @@ export const WhyChooseUs = () => {
           <FadeIn direction="up" delay={0.2} className="why-visual-wrap">
             <div className="why-image-sticky">
               <ImagePlaceholder
+               src="/images/why-choose-williams-constructions.webp"
+                alt="why-choose-williams-constructions.webp"
                 aspectRatio="4/5"
                 category="about"
                 filename="why-choose-williams-constructions.jpg"
