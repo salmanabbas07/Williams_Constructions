@@ -36,7 +36,7 @@ export const AboutPage = () => {
       <WhyChooseUs />
 
       {/* Direct Workforce Request */}
-      <Appointment />
+      {/* <Appointment /> */}
     </div>
   );
 };

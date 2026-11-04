@@ -51,20 +51,22 @@ export const Home = () => {
       {/* SECTION 3: Our Services (Preview Variant) */}
       <Services variant="preview" />
 
+      {/* SECTION 3: How We Work (Preview Variant) */}
+      <HowWeWork variant="preview" />
+
       {/* SECTION 4: Compliance & Documentation Handled End-to-End */}
-      <Compliance />
+      {/* <Compliance /> */}
 
       {/* SECTION 5: Industries We Serve (Preview Variant) */}
       <Industries variant="preview" />
 
-      {/* SECTION 6: How We Work (Preview Variant) */}
-      <HowWeWork variant="preview" />
+      
 
-      {/* SECTION 7: Why Do Companies Choose Us? */}
+      {/* SECTION 6: Why Do Companies Choose Us? */}
       <WhyChooseUs />
 
-      {/* SECTION 8: Appointment / Request Workforce Form */}
-      <Appointment />
+      {/* SECTION 7: Appointment / Request Workforce Form */}
+      {/* <Appointment /> */}
     </div>
   );
 };
