@@ -1,12 +1,13 @@
 /* Williams Constructions - Responsive Breakpoints & Overrides */
 
-/* Mobile Small (< 425px) */
-@media (max-width: 425px) {
+/* Mobile (< 480px) */
+@media (max-width: 480px) {
   :root {
     --section-padding-y: 3rem;
   }
   
-  .container {
+  .container,
+  .container-wide {
     padding-left: 1rem;
     padding-right: 1rem;
   }

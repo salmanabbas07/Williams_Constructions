@@ -139,3 +139,28 @@
 .btn:hover .btn-icon-left {
   transform: translateX(-3px);
 }
+
+/* Responsive Button Adjustments */
+@media (max-width: 480px) {
+  .btn {
+    max-width: 100%;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .btn-text {
+    overflow-wrap: break-word;
+    word-break: normal;
+  }
+
+  .btn-lg {
+    padding: 0.8rem 1.35rem;
+    font-size: 0.95rem;
+  }
+
+  .btn-md {
+    padding: 0.65rem 1.15rem;
+    font-size: 0.9rem;
+  }
+}
+

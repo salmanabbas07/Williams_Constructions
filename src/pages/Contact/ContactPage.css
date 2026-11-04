@@ -202,3 +202,22 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 480px) {
+  .contact-feature-card {
+    padding: 1.5rem 1.15rem;
+  }
+
+  .phone-links-group {
+    gap: 0.5rem;
+  }
+
+  .contact-phone-item,
+  .contact-email-item {
+    word-break: break-word;
+  }
+
+  .map-placeholder-card {
+    height: 220px;
+  }
+}

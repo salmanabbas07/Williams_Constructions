@@ -229,3 +229,16 @@
     gap: 1.5rem;
   }
 }
+
+@media (max-width: 480px) {
+  .industries-highlights-bar {
+    gap: 0.65rem;
+  }
+
+  .highlight-pill {
+    width: 100%;
+    justify-content: center;
+    font-size: 0.82rem;
+    padding: 0.5rem 0.9rem;
+  }
+}

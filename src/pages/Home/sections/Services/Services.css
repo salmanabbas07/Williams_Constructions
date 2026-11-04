@@ -196,6 +196,12 @@
   }
 }
 
+@media (max-width: 768px) {
+  .service-card-body {
+    padding: 1.4rem 1.25rem;
+  }
+}
+
 @media (max-width: 640px) {
   .services-grid {
     grid-template-columns: 1fr;

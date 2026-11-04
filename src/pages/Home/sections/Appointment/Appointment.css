@@ -110,6 +110,8 @@
   font-size: 0.78rem;
   color: rgba(255, 255, 255, 0.7);
   line-height: 1.5;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .note-icon {
@@ -123,6 +125,7 @@
   background: rgba(0, 0, 0, 0.25);
   padding: 0.1rem 0.3rem;
   border-radius: 3px;
+  word-break: break-all;
 }
 
 /* Form Column */
@@ -288,6 +291,11 @@
 }
 
 @media (max-width: 640px) {
+  .appointment-info-col,
+  .appointment-form-col {
+    padding: 1.5rem 1.25rem;
+  }
+
   .form-grid {
     grid-template-columns: 1fr;
   }
@@ -295,5 +303,20 @@
   .form-submit-row {
     flex-direction: column;
     align-items: stretch;
+  }
+}
+
+@media (max-width: 380px) {
+  .appointment-info-col,
+  .appointment-form-col {
+    padding: 1.25rem 1rem;
+  }
+
+  .info-contact-item {
+    gap: 0.75rem;
+  }
+
+  .info-contact-item p {
+    word-break: break-word;
   }
 }

@@ -345,4 +345,8 @@
   .hero-slide {
     min-height: 460px;
   }
+
+  .hero-cta-group {
+    gap: 0.75rem;
+  }
 }
