@@ -135,27 +135,32 @@ export const About = ({ variant = 'preview' }) => {
               </p>
             </div>
 
-            <h4 className="about-benefits-heading">
-              Zakaj izbrati nas?
-            </h4>
+            {/* In full mode (About page), show Benefits Heading and 4 Cards */}
+            {isFull && (
+              <>
+                <h4 className="about-benefits-heading">
+                  Zakaj izbrati nas?
+                </h4>
 
-            {/* 4 Benefit Cards Grid */}
-            <div className="about-benefits-grid">
-              {BENEFIT_CARDS.map((card) => {
-                const Icon = card.icon;
-                return (
-                  <div key={card.id} className="benefit-card">
-                    <div className="benefit-icon-wrap">
-                      <Icon size={20} />
-                    </div>
-                    <div className="benefit-text">
-                      <h4 className="benefit-title">{card.title}</h4>
-                      <p className="benefit-desc">{card.description}</p>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
+                {/* 4 Benefit Cards Grid */}
+                <div className="about-benefits-grid">
+                  {BENEFIT_CARDS.map((card) => {
+                    const Icon = card.icon;
+                    return (
+                      <div key={card.id} className="benefit-card">
+                        <div className="benefit-icon-wrap">
+                          <Icon size={20} />
+                        </div>
+                        <div className="benefit-text">
+                          <h4 className="benefit-title">{card.title}</h4>
+                          <p className="benefit-desc">{card.description}</p>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </>
+            )}
 
             {/* Action Buttons for Preview Mode */}
             {!isFull && (
