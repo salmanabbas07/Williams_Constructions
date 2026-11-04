@@ -3,19 +3,7 @@
 export const navLinks = [
   { label: 'Domov', path: '/' },
   { label: 'O nas', path: '/about' },
-  {
-    label: 'Storitve',
-    path: '/services',
-    isDropdown: true,
-    children: [
-      { label: 'Zidarska dela in gradbeništvo', path: '/services#masonry', id: 'masonry' },
-      { label: 'Podizvajalske storitve', path: '/services#subcontracting', id: 'subcontracting' },
-      { label: 'Varilci (TIG / MIG / MAG)', path: '/services#welders', id: 'welders' },
-      { label: 'Upravljavci gradbene mehanizacije', path: '/services#machine-operators', id: 'machine-operators' },
-      { label: 'Začasno in projektno zaposlovanje', path: '/services#temporary-staffing', id: 'temporary-staffing' },
-      { label: 'Kvalificirani gradbeni delavci', path: '/services#skilled-workers', id: 'skilled-workers' }
-    ]
-  },
+  { label: 'Storitve', path: '/services' },
   { label: 'Projekti', path: '/projects' },
   { label: 'Blog', path: '/blog' },
   { label: 'FAQ', path: '/faq' },

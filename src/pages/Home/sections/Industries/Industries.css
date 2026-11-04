@@ -214,6 +214,38 @@
   text-align: center;
 }
 
+/* Swiper Carousel for Home Preview */
+.industries-swiper {
+  width: 100%;
+  padding-bottom: 2.75rem;
+  position: relative;
+}
+
+.industries-swiper .swiper-slide {
+  height: auto;
+  display: flex;
+}
+
+.industries-swiper .industry-card {
+  height: 100%;
+  width: 100%;
+}
+
+.industries-swiper .swiper-pagination-bullet {
+  background: var(--charcoal);
+  opacity: 0.35;
+  width: 8px;
+  height: 8px;
+  transition: all var(--transition-fast);
+}
+
+.industries-swiper .swiper-pagination-bullet-active {
+  background: var(--burnt-orange);
+  opacity: 1;
+  width: 24px;
+  border-radius: var(--radius-full);
+}
+
 @media (max-width: 1024px) {
   .industries-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));

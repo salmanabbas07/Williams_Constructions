@@ -1,6 +1,8 @@
 // src/pages/Home/sections/Services/Services.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination } from 'swiper/modules';
 import { 
   Hammer, 
   Building2, 
@@ -16,6 +18,8 @@ import SectionTitle from '../../../../components/SectionTitle/SectionTitle';
 import Button from '../../../../components/Button/Button';
 import ImagePlaceholder from '../../../../components/ImagePlaceholder/ImagePlaceholder';
 import FadeIn from '../../../../components/Motion/FadeIn';
+import 'swiper/css';
+import 'swiper/css/pagination';
 import './Services.css';
 
 const ICON_MAP = {
@@ -40,52 +44,53 @@ export const Services = ({ variant = 'preview' }) => {
           align="center"
         />
 
-        <div className={`services-grid ${isFull ? 'services-grid-full' : ''}`}>
-          {servicesData.map((service, idx) => {
-            const IconComponent = ICON_MAP[service.icon] || HardHat;
+        {isFull ? (
+          /* Full page static grid layout */
+          <div className="services-grid services-grid-full">
+            {servicesData.map((service, idx) => {
+              const IconComponent = ICON_MAP[service.icon] || HardHat;
 
-            return (
-              <FadeIn key={service.id} delay={idx * 0.08} direction="up" className="service-card-wrapper">
-                <div id={service.id} className="service-card">
-                  {/* Image Placeholder */}
-                  <div className="service-card-image-wrap">
-                    <ImagePlaceholder
-                      src={service.image}
-                      alt={service.imageAlt || service.title}
-                      aspectRatio="16/10"
-                      category={service.id}
-                      filename={service.image}
-                      caption={service.title}
-                    />
-                    <div className="service-icon-floating">
-                      <IconComponent size={22} />
+              return (
+                <FadeIn key={service.id} delay={idx * 0.08} direction="up" className="service-card-wrapper">
+                  <div id={service.id} className="service-card">
+                    {/* Image Placeholder */}
+                    <div className="service-card-image-wrap">
+                      <ImagePlaceholder
+                        src={service.image}
+                        alt={service.imageAlt || service.title}
+                        aspectRatio="16/10"
+                        category={service.id}
+                        filename={service.image}
+                        caption={service.title}
+                      />
+                      <div className="service-icon-floating">
+                        <IconComponent size={22} />
+                      </div>
                     </div>
-                  </div>
 
-                  {/* Card Content */}
-                  <div className="service-card-body">
-                    <span className="service-subtitle">{service.subtitle}</span>
-                    <h3 className="service-card-title">{service.title}</h3>
-                    
-                    <p className="service-card-desc">
-                      {isFull ? service.fullDescription : service.shortDescription}
-                    </p>
+                    {/* Card Content */}
+                    <div className="service-card-body">
+                      <span className="service-subtitle">{service.subtitle}</span>
+                      <h3 className="service-card-title">{service.title}</h3>
+                      
+                      <p className="service-card-desc">
+                        {service.fullDescription}
+                      </p>
 
-                    {/* If Full page, render feature list */}
-                    {isFull && service.features && (
-                      <ul className="service-feature-list">
-                        {service.features.map((feature, fIdx) => (
-                          <li key={fIdx} className="service-feature-item">
-                            <CheckCircle2 size={16} className="feature-check-icon" />
-                            <span>{feature}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
+                      {/* If Full page, render feature list */}
+                      {service.features && (
+                        <ul className="service-feature-list">
+                          {service.features.map((feature, fIdx) => (
+                            <li key={fIdx} className="service-feature-item">
+                              <CheckCircle2 size={16} className="feature-check-icon" />
+                              <span>{feature}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
 
-                    {/* Card Action */}
-                    <div className="service-card-footer">
-                      {isFull ? (
+                      {/* Card Action */}
+                      <div className="service-card-footer">
                         <Button
                           to={`/contact?service=${encodeURIComponent(service.title)}`}
                           variant="primary"
@@ -94,19 +99,86 @@ export const Services = ({ variant = 'preview' }) => {
                         >
                           Zahtevajte ta profil
                         </Button>
-                      ) : (
+                      </div>
+                    </div>
+                  </div>
+                </FadeIn>
+              );
+            })}
+          </div>
+        ) : (
+          /* Home page automatic carousel */
+          <Swiper
+            modules={[Autoplay, Pagination]}
+            slidesPerView={1}
+            spaceBetween={24}
+            loop={true}
+            speed={600}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true
+            }}
+            pagination={{
+              clickable: true,
+              dynamicBullets: true
+            }}
+            breakpoints={{
+              640: {
+                slidesPerView: 3,
+                spaceBetween: 24
+              },
+              1024: {
+                slidesPerView: 3,
+                spaceBetween: 30
+              }
+            }}
+            className="services-swiper"
+          >
+            {servicesData.map((service) => {
+              const IconComponent = ICON_MAP[service.icon] || HardHat;
+
+              return (
+                <SwiperSlide key={service.id} className="services-swiper-slide">
+                  <div id={service.id} className="service-card">
+                    {/* Image Placeholder */}
+                    <div className="service-card-image-wrap">
+                      <ImagePlaceholder
+                        src={service.image}
+                        alt={service.imageAlt || service.title}
+                        aspectRatio="16/10"
+                        category={service.id}
+                        filename={service.image}
+                        caption={service.title}
+                      />
+                      <div className="service-icon-floating">
+                        <IconComponent size={22} />
+                      </div>
+                    </div>
+
+                    {/* Card Content */}
+                    <div className="service-card-body">
+                      <span className="service-subtitle">{service.subtitle}</span>
+                      <h3 className="service-card-title">{service.title}</h3>
+                      
+                      <p className="service-card-desc">
+                        {service.shortDescription}
+                      </p>
+
+                      {/* Card Action */}
+                      <div className="service-card-footer">
                         <Link to={`/services#${service.id}`} className="service-read-more-btn">
                           <span>Preberite več</span>
                           <ArrowRight size={16} className="read-more-arrow" />
                         </Link>
-                      )}
+                      </div>
                     </div>
                   </div>
-                </div>
-              </FadeIn>
-            );
-          })}
-        </div>
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
+        )}
 
         {/* View All CTA on preview */}
         {!isFull && (

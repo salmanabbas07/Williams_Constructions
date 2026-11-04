@@ -188,6 +188,38 @@
   text-align: center;
 }
 
+/* Swiper Carousel for Home Preview */
+.services-swiper {
+  width: 100%;
+  padding-bottom: 2.75rem;
+  position: relative;
+}
+
+.services-swiper .swiper-slide {
+  height: auto;
+  display: flex;
+}
+
+.services-swiper .service-card {
+  height: 100%;
+  width: 100%;
+}
+
+.services-swiper .swiper-pagination-bullet {
+  background: var(--charcoal);
+  opacity: 0.35;
+  width: 8px;
+  height: 8px;
+  transition: all var(--transition-fast);
+}
+
+.services-swiper .swiper-pagination-bullet-active {
+  background: var(--burnt-orange);
+  opacity: 1;
+  width: 24px;
+  border-radius: var(--radius-full);
+}
+
 /* Responsive Grid */
 @media (max-width: 1024px) {
   .services-grid {
