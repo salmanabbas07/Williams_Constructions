@@ -2,9 +2,15 @@
 
 .page-hero-banner {
   position: relative;
+  width: 100%;
+  height: 560px;
+  min-height: 520px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background: var(--dark-bg-gradient);
   color: #FFFFFF;
-  padding: clamp(3rem, 5vw, 4.5rem) 0 clamp(3.5rem, 6vw, 5rem);
+  padding: 3rem 0;
   overflow: hidden;
   border-bottom: 3px solid var(--burnt-orange);
 }
@@ -23,8 +29,8 @@
   inset: 0;
   background: linear-gradient(
     135deg,
-    rgba(41, 39, 36, 0.82) 0%,
-    rgba(41, 39, 36, 0.68) 100%
+    rgba(30, 33, 30, 0.54) 0%,
+    rgba(30, 33, 30, 0.38) 100%
   );
   z-index: 1;
 }
@@ -57,8 +63,9 @@
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.85);
   transition: color var(--transition-fast);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
 }
 
 .breadcrumb-link:hover {
@@ -66,12 +73,13 @@
 }
 
 .breadcrumb-chevron {
-  color: rgba(255, 255, 255, 0.35);
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .breadcrumb-current {
   color: var(--light-gold);
   font-weight: 600;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
 }
 
 .page-hero-badge {
@@ -84,11 +92,13 @@
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--light-gold);
-  background-color: rgba(184, 92, 56, 0.22);
-  border: 1px solid rgba(184, 92, 56, 0.45);
+  background-color: rgba(35, 33, 30, 0.55);
+  border: 1px solid rgba(184, 92, 56, 0.55);
+  backdrop-filter: blur(4px);
   padding: 0.3rem 0.8rem;
   border-radius: var(--radius-full);
   margin-bottom: 0.85rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
 
 .page-hero-badge-dot {
@@ -105,10 +115,27 @@
   line-height: 1.2;
   letter-spacing: -0.02em;
   margin-bottom: 0.75rem;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 .page-hero-subtitle {
   font-size: clamp(1rem, 1.5vw, 1.15rem);
-  color: rgba(255, 255, 255, 0.82);
+  color: rgba(255, 255, 255, 0.95);
   line-height: 1.6;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.45);
+}
+
+@media (max-width: 768px) {
+  .page-hero-banner {
+    height: auto;
+    min-height: 500px;
+    padding: 2.5rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-hero-banner {
+    min-height: 460px;
+    padding: 2rem 0;
+  }
 }

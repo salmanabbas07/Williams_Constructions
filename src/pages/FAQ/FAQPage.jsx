@@ -42,6 +42,7 @@ export const FAQPage = () => {
       />
 
       <PageHero
+        src="/images/faq-banner.webp"
         badge="Pogosta vprašanja"
         title="Odgovori in pojasnila"
         subtitle="Jasni odgovori o napotitvi delavcev, enotnih delovnih dovoljenjih v Sloveniji, preverjanju znanj in pogodbenih jamstvih."

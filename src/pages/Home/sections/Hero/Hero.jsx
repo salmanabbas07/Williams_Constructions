@@ -79,7 +79,6 @@ export const Hero = () => {
                 className="hero-bg-image" 
                 loading={slide.id === 1 ? 'eager' : 'lazy'}
               />
-              <div className="hero-blueprint-grid" />
               <div className="hero-dark-overlay" />
             </div>
 

@@ -17,6 +17,7 @@ export const IndustriesPage = () => {
       />
 
       <PageHero
+        src="/images/project-banner.webp"
         badge="Ključni gospodarski sektorji"
         title="Projekti in panoge, ki jim nudimo podporo"
         subtitle="Od večjih prometnih infrastrukturnih projektov in visokih gradenj do industrijskih obratov ter sodobnih logističnih centrov v Sloveniji."

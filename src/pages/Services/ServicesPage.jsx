@@ -17,6 +17,7 @@ export const ServicesPage = () => {
       />
 
       <PageHero
+        src="/images/service-banner.webp"
         badge="Profili in kadrovske zmogljivosti"
         title="Gradbene in tehnične storitve"
         subtitle="Celovite kadrovske rešitve po vsej Sloveniji. Popolnoma dokumentirani, varnostno usposobljeni in vodeni delavci za maksimalno produktivnost."

@@ -27,6 +27,7 @@ export const ContactPage = () => {
       />
 
       <PageHero
+        src="/images/contect-banner.webp"
         badge="Stopite v stik"
         title="Kontaktirajte Williams Constructions"
         subtitle="Stopite v neposreden stik z našo slovensko ekipo glede zagotavljanja delavcev na gradbišču, zidarskega podizvajalstva ali specializiranih varilskih del."

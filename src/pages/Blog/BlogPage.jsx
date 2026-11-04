@@ -37,6 +37,7 @@ export const BlogPage = () => {
       />
 
       <PageHero
+        src="/images/blog-banner.webp"
         badge="Znanje in panožne novice"
         title="Gradbeni in kadrovski vpogledi"
         subtitle="Praktični vodniki o slovenski delovnopravni skladnosti, produktivnosti delavcev, standardih varjenja in varnosti na gradbišču."
