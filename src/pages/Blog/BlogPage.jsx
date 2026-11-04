@@ -99,6 +99,8 @@ export const BlogPage = () => {
                 <article key={post.id} className="blog-card">
                   <div className="blog-card-img-wrap">
                     <ImagePlaceholder
+                      src={post.image}
+                      alt={post.imageAlt || post.title}
                       aspectRatio="16/10"
                       category="welding"
                       filename={post.image}
@@ -123,7 +125,7 @@ export const BlogPage = () => {
 
                     <div className="blog-card-footer">
                       <span className="blog-card-author">
-                        <User size={13} /> Avtor: {post.author}
+                        <User size={13} /> Avtor: {/* {post.author} */}
                       </span>
                       <button
                         type="button"
@@ -167,6 +169,8 @@ export const BlogPage = () => {
 
             <div className="article-modal-image">
               <ImagePlaceholder
+                src={activeArticle.image}
+                alt={activeArticle.imageAlt || activeArticle.title}
                 aspectRatio="21/9"
                 category="welding"
                 filename={activeArticle.image}

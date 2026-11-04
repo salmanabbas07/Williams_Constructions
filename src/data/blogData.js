@@ -16,7 +16,7 @@ export const blogData = [
       <h3>Zakaj je vnaprejšnja pravna skladnost ključna?</h3>
       <p>Sodelovanje s specializiranim kadrovskim izvajalcem zagotavlja, da so vsa dovoljenja, davčne številke in varnostni certifikati (VZD) v celoti urejeni še pred prihodom ekipe na gradbišče. To preprečuje prekinitve del, obiske inšpekcijskih služb ter visoke globe za glavne izvajalce.</p>
     `,
-    image: 'blog-permits.jpg',
+    image: '/images/blog-permits.webp',
     imageAlt: 'Pregled dokumentacije in gradbenih načrtov na gradbišču v Sloveniji'
   },
   {
@@ -34,7 +34,7 @@ export const blogData = [
       <h3>Neposreden tehnični nadzor na gradbišču</h3>
       <p>Tehnična usposobljenost mora biti podprta z aktivnim nadzorom. Jasna komunikacija varilskih specifikacij (WPS) zagotavlja optimalno metalurgijo in hiter prevzem s strani inšpektorjev naročnika.</p>
     `,
-    image: 'blog-welding.jpg',
+    image: '/images/blog-welding.webp',
     imageAlt: 'Industrijski varilec pri natančnem TIG varjenju cevne zveze'
   },
   {
@@ -52,7 +52,7 @@ export const blogData = [
       <h3>Pristop podjetja Williams Services</h3>
       <p>Naš direktor, Toushif Williams, je več let preživel neposredno na gradbiščih ob boku azijskih mojstrov. Razumevanje njihovih delovnih navad, motivacije in jezika popolnoma spremeni delovno dinamiko. Ko delavci prejmejo navodila v jeziku, ki ga v celoti obvladajo, se napake zmanjšajo, upoštevanje varnosti se poveča, končni rezultat pa ustreza najvišjim evropskim standardom kakovosti.</p>
     `,
-    image: 'blog-management.jpg',
+    image: '/images/blog-management.webp',
     imageAlt: 'Vodja del pri razlagi gradbenih načrtov z ekipo na gradbišču'
   },
   {
@@ -68,7 +68,7 @@ export const blogData = [
       <p>Delo s težkimi gradbenimi stroji v strnjenih urbanih naseljih zahteva izjemno prostorsko orientacijo in dosledno spoštovanje varnostnih predpisov. Zavarovanje izkopov pred sesutjem, preprečevanje poškodb podzemnih instalacij ter nadzor nad delovnim območjem žerjavov in bagrov so bistveni za delo brez nezgod.</p>
       <p>Williams Services zagotavlja strojnike, ki imajo veljavna spričevala ter dolgoletne izkušnje z bagri, JCB kombinirkami in mobilnimi dvigali na najzahtevnejših infrastrukturnih deloviščih.</p>
     `,
-    image: 'blog-machinery.jpg',
+    image: '/images/blog-machinery.webp',
     imageAlt: 'Težki bager pri zemeljskih delih na urbanem infrastrukturnem projektu'
   }
 ];

@@ -120,6 +120,29 @@
   position: relative;
 }
 
+/* Subtle Burnt Orange Gradient Overlay */
+.blog-card .image-placeholder-container::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background: linear-gradient(
+    135deg,
+    rgba(41, 39, 36, 0.10),
+    rgba(184, 92, 56, 0.25)
+  );
+  transition: opacity 0.3s ease, background 0.3s ease;
+}
+
+.blog-card:hover .image-placeholder-container::after {
+  background: linear-gradient(
+    135deg,
+    rgba(41, 39, 36, 0.15),
+    /* rgba(184, 92, 56, 0.35) */
+  );
+}
+
 .blog-card-category {
   position: absolute;
   top: 14px;
