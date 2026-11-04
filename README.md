@@ -219,6 +219,6 @@ src/services/appointmentService.js
 - **Company**: Williams Services d.o.o. / Williams Constructions
 - **Director**: Toushif Williams
 - **Headquarters**: Kotnikova ulica 28, 1000 Ljubljana, Slovenia
-- **Contact Email**: [info@wservicess.com](mailto:info@wservicess.com)
+- **Contact Email**: [info.williamconstruction@gmail.com](mailto:info.williamconstruction@gmail.com)
 - **Phone Lines**: +386 69 803 622 | +386 70 447 982
 - **Website**: [https://thewilliamsconstructions.com/](https://thewilliamsconstructions.com/)

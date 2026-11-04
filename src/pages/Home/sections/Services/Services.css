@@ -38,7 +38,16 @@
 
 .service-card-image-wrap {
   position: relative;
+  border-bottom-left-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
 }
+
+.service-card .image-placeholder-container {
+  border-bottom-left-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+}
+
+
 
 /* Subtle Burnt Orange Gradient Overlay */
 .service-card .image-placeholder-container::after {
@@ -54,14 +63,14 @@
   );
   transition: opacity 0.3s ease, background 0.3s ease;
 }
-
+/* 
 .service-card:hover .image-placeholder-container::after {
   background: linear-gradient(
     135deg,
     rgba(41, 39, 36, 0.15),
     rgba(184, 92, 56, 0.35)
   );
-}
+} */
 
 .service-icon-floating {
   position: absolute;

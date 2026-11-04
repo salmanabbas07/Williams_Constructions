@@ -66,9 +66,9 @@ export const ContactPage = () => {
 
             {/* Card 3: Email */}
             <div className="contact-feature-card">
-              <div className="contact-feature-icon">
+              <a href={`mailto:${companyContact.email}`} className="contact-feature-icon" aria-label="E-poštna povpraševanja">
                 <Mail size={24} />
-              </div>
+              </a>
               <h3 className="feature-title">E-poštna povpraševanja</h3>
               <a href={`mailto:${companyContact.email}`} className="contact-email-item">
                 {companyContact.email}

@@ -2,7 +2,7 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation, EffectFade } from 'swiper/modules';
-import { ArrowRight, PhoneCall, ShieldCheck, Award, Users } from 'lucide-react';
+import { ArrowLeft, ArrowRight, PhoneCall, ShieldCheck, Award, Users } from 'lucide-react';
 import Button from '../../../../components/Button/Button';
 import './Hero.css';
 
@@ -153,14 +153,14 @@ export const Hero = () => {
             className="hero-nav-btn hero-nav-btn-prev" 
             aria-label="Prejšnja prosojnica"
           >
-            &#8592;
+            <ArrowLeft size={20} />
           </button>
           <button 
             type="button" 
             className="hero-nav-btn hero-nav-btn-next" 
             aria-label="Naslednja prosojnica"
           >
-            &#8594;
+            <ArrowRight size={20} />
           </button>
         </div>
       </div>

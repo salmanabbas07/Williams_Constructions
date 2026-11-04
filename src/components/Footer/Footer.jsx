@@ -9,7 +9,6 @@ import {
   ShieldCheck
 } from 'lucide-react';
 import { 
-  LinkedinIcon, 
   FacebookIcon, 
   InstagramIcon, 
   WhatsAppIcon 
@@ -63,13 +62,10 @@ export const Footer = () => {
               </p>
 
               <div className="footer-social-links">
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-icon-btn" aria-label="Williams na LinkedIn">
-                  <LinkedinIcon size={18} />
-                </a>
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="social-icon-btn" aria-label="Williams na Facebook">
+                <a href="https://www.facebook.com/share/1FpBTb6L7W/" target="_blank" rel="noopener noreferrer" className="social-icon-btn" aria-label="Williams na Facebook">
                   <FacebookIcon size={18} />
                 </a>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-icon-btn" aria-label="Williams na Instagram">
+                <a href="https://www.instagram.com/williams.construction.slovenia/" target="_blank" rel="noopener noreferrer" className="social-icon-btn" aria-label="Williams na Instagram">
                   <InstagramIcon size={18} />
                 </a>
                 <a href="https://wa.me/38669803622" target="_blank" rel="noopener noreferrer" className="social-icon-btn" aria-label="Sporočilo prek WhatsApp">
@@ -159,9 +155,9 @@ export const Footer = () => {
                 </div>
 
                 <div className="footer-contact-row">
-                  <div className="contact-icon-wrap">
+                  <a href={`mailto:${companyContact.email}`} className="contact-icon-wrap" aria-label="Pišite nam">
                     <Mail size={18} />
-                  </div>
+                  </a>
                   <div>
                     <span className="contact-label">Pišite nam:</span>
                     <a href={`mailto:${companyContact.email}`} className="contact-val contact-mail-link">

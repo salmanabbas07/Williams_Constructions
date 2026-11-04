@@ -118,6 +118,13 @@
 
 .blog-card-img-wrap {
   position: relative;
+  border-bottom-left-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+}
+
+.blog-card .image-placeholder-container {
+  border-bottom-left-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
 }
 
 /* Subtle Burnt Orange Gradient Overlay */

@@ -189,12 +189,16 @@ export const Appointment = ({ initialService = '', isContactPage = false }) => {
               </div>
 
               <div className="info-contact-item">
-                <div className="info-icon-wrap">
+                <a href={`mailto:${companyContact.email}`} className="info-icon-wrap" aria-label="Uradni e-naslov">
                   <Mail size={18} />
-                </div>
+                </a>
                 <div>
                   <strong>Uradni e-naslov</strong>
-                  <p>{companyContact.email}</p>
+                  <p>
+                    <a href={`mailto:${companyContact.email}`} style={{ color: 'inherit', textDecoration: 'none' }}>
+                      {companyContact.email}
+                    </a>
+                  </p>
                 </div>
               </div>
             </div>
