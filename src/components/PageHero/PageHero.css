@@ -29,18 +29,6 @@
   z-index: 1;
 }
 
-.page-hero-blueprint {
-  position: absolute;
-  inset: 0;
-  opacity: 0.08;
-  background-image: 
-    linear-gradient(to right, #FFFFFF 1px, transparent 1px),
-    linear-gradient(to bottom, #FFFFFF 1px, transparent 1px);
-  background-size: 32px 32px;
-  pointer-events: none;
-  z-index: 1;
-}
-
 .page-hero-container {
   position: relative;
   z-index: 2;

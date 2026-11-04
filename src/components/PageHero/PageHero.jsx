@@ -24,7 +24,6 @@ export const PageHero = ({
         />
       )}
       <div className="page-hero-overlay" aria-hidden="true" />
-      <div className="page-hero-blueprint" aria-hidden="true" />
       <div className="container page-hero-container">
         {/* Breadcrumb Navigation */}
         <nav aria-label="Breadcrumb" className="breadcrumb-nav">
