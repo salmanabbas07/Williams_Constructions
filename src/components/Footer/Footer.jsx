@@ -24,7 +24,7 @@ export const Footer = () => {
   return (
     <footer className="site-footer">
       {/* Pre-footer Callout Banner */}
-      <div className="footer-callout">
+      {/* <div className="footer-callout">
         <div className="container footer-callout-inner">
           <div className="callout-text">
             <span className="callout-badge">
@@ -42,7 +42,7 @@ export const Footer = () => {
             </Link>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Main Multi-Column Footer Content */}
       <div className="footer-main">
