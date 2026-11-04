@@ -103,11 +103,11 @@ export const Footer = () => {
                     <ArrowRight size={14} className="link-arrow" /> Kontakt
                   </Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link to="/privacy-policy" className="footer-link">
                     <ArrowRight size={14} className="link-arrow" /> Politika zasebnosti
                   </Link>
-                </li>
+                </li> */}
               </ul>
             </div>
 
