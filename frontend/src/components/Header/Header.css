@@ -445,12 +445,15 @@
     width: 170px;
     height: 48px;
   }
+  
 }
 
 @media (max-width: 380px) {
   .header-topbar-inner {
-    gap: 0.5rem;
+    
+    gap: 1.5rem;
     font-size: 0.7rem;
+    /* background-color: yellow !important; */
   }
   .navbar-inner {
     height: 74px;
@@ -458,5 +461,9 @@
   .header-brand-logo {
     width: 150px;
     height: 42px;
+  }
+
+  .topbar-right{
+    gap: 3px;
   }
 }
