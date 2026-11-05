@@ -1,0 +1,92 @@
+/* src/pages/PrivacyPolicy/PrivacyPolicyPage.css */
+
+.privacy-page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.privacy-container {
+  max-width: 860px;
+}
+
+.legal-notice-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  background-color: var(--sand-beige);
+  border: 1px solid rgba(184, 92, 56, 0.4);
+  border-left: 4px solid var(--burnt-orange);
+  border-radius: var(--radius-sm);
+  margin-bottom: 2.5rem;
+  font-size: 0.9rem;
+  color: var(--charcoal);
+  line-height: 1.5;
+}
+
+.legal-notice-box .notice-icon {
+  color: var(--burnt-orange);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.privacy-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.policy-section h2 {
+  font-size: 1.45rem;
+  color: var(--charcoal);
+  margin-bottom: 0.85rem;
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.policy-section p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.policy-section ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-left: 1.25rem;
+  list-style-type: disc;
+}
+
+.policy-section li {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.policy-section strong {
+  color: var(--charcoal);
+}
+
+.controller-details {
+  background-color: var(--light-bg);
+  padding: 1.25rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+  margin-top: 0.75rem;
+}
+
+.controller-details strong {
+  display: block;
+  font-size: 1.05rem;
+  color: var(--charcoal);
+  margin-bottom: 0.35rem;
+}
+
+.controller-details p {
+  margin: 0;
+  font-size: 0.925rem;
+  color: var(--text-secondary);
+}

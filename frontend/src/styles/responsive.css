@@ -1,0 +1,35 @@
+/* Williams Constructions - Responsive Breakpoints & Overrides */
+
+/* Mobile (< 480px) */
+@media (max-width: 480px) {
+  :root {
+    --section-padding-y: 3rem;
+  }
+  
+  .container,
+  .container-wide {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Tablet Portrait (< 768px) */
+@media (max-width: 768px) {
+  :root {
+    --section-padding-y: 3.5rem;
+  }
+}
+
+/* Tablet Landscape (< 1024px) */
+@media (max-width: 1024px) {
+  .hide-on-tablet {
+    display: none !important;
+  }
+}
+
+/* Desktop Only (> 1024px) */
+@media (min-width: 1025px) {
+  .hide-on-desktop {
+    display: none !important;
+  }
+}
