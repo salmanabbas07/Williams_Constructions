@@ -427,43 +427,55 @@
 @media (max-width: 640px) {
   .header-topbar {
     font-size: 0.75rem;
+    max-height: 100px;
+  }
+  .header-topbar-inner {
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+    gap: 0.5rem;
+  }
+  .topbar-right {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    width: 100%;
+  }
+  .topbar-divider {
+    display: none;
+  }
+  .topbar-link {
+    font-size: 0.75rem;
+    line-height: 1.25;
+  }
+  .navbar-inner {
+    height: 76px;
+  }
+  .header-brand-logo {
+    width: 160px;
+    height: 45px;
+  }
+  .mobile-toggle-btn {
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 380px) {
+  .header-topbar {
+    font-size: 0.72rem;
   }
   .header-topbar-inner {
     padding-top: 0.35rem;
     padding-bottom: 0.35rem;
-    gap: 0.85rem;
-    flex-wrap: wrap;
   }
-  .topbar-right {
-    flex-wrap: wrap;
-    justify-content: center;
+  .topbar-link {
+    font-size: 0.72rem;
   }
   .navbar-inner {
-    height: 80px;
+    height: 72px;
   }
   .header-brand-logo {
-    width: 170px;
-    height: 48px;
-  }
-  
-}
-
-@media (max-width: 380px) {
-  .header-topbar-inner {
-    
-    gap: 1.5rem;
-    font-size: 0.7rem;
-    /* background-color: yellow !important; */
-  }
-  .navbar-inner {
-    height: 74px;
-  }
-  .header-brand-logo {
-    width: 150px;
-    height: 42px;
-  }
-
-  .topbar-right{
-    gap: 0px;
+    width: 145px;
+    height: 40px;
   }
 }
