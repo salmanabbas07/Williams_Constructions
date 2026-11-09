@@ -1,0 +1,16 @@
+# Local mail configuration containing real passwords
+config/mail.local.php
+
+# Environment variables
+.env
+.env.local
+
+# Server & debug logs
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Composer dependencies (Uncomment if managing dependencies on server via composer)
+# vendor/

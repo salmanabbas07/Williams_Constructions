@@ -1,35 +1,36 @@
 // src/pages/Home/sections/Appointment/Appointment.jsx
-import React, { useState } from 'react';
-import { 
-  Send, 
-  Calendar, 
-  Clock, 
-  CheckCircle2, 
-  AlertCircle, 
-  Info, 
-  Phone, 
-  Mail, 
-  MapPin, 
-  ShieldCheck 
-} from 'lucide-react';
-import SectionTitle from '../../../../components/SectionTitle/SectionTitle';
-import Button from '../../../../components/Button/Button';
-import { servicesData } from '../../../../data/servicesData';
-import { companyContact } from '../../../../data/navigationData';
-import { submitAppointmentRequest } from '../../../../services/appointmentService';
-import './Appointment.css';
+import React, { useState } from "react";
+import {
+  Send,
+  Calendar,
+  Clock,
+  CheckCircle2,
+  AlertCircle,
+  Info,
+  Phone,
+  Mail,
+  MapPin,
+  ShieldCheck,
+} from "lucide-react";
+import SectionTitle from "../../../../components/SectionTitle/SectionTitle";
+import Button from "../../../../components/Button/Button";
+import { servicesData } from "../../../../data/servicesData";
+import { companyContact } from "../../../../data/navigationData";
+import { submitAppointmentRequest } from "../../../../services/appointmentService";
+import "./Appointment.css";
 
-export const Appointment = ({ initialService = '', isContactPage = false }) => {
+export const Appointment = ({ initialService = "", isContactPage = false }) => {
   const [formData, setFormData] = useState({
-    fullName: '',
-    companyName: '',
-    email: '',
-    phone: '',
-    serviceRequired: initialService || '',
-    preferredDate: '',
-    preferredTime: '',
-    projectLocation: '',
-    message: ''
+    fullName: "",
+    companyName: "",
+    email: "",
+    phone: "",
+    serviceRequired: initialService || "",
+    preferredDate: "",
+    preferredTime: "",
+    projectLocation: "",
+    message: "",
+    _hp_website: "",
   });
 
   const [errors, setErrors] = useState({});
@@ -38,42 +39,44 @@ export const Appointment = ({ initialService = '', isContactPage = false }) => {
     submitted: false,
     success: false,
     isDemo: false,
-    message: ''
+    message: "",
   });
 
   const validate = () => {
     const newErrors = {};
 
     if (!formData.fullName.trim()) {
-      newErrors.fullName = 'Ime in priimek sta obvezna.';
+      newErrors.fullName = "Ime in priimek sta obvezna.";
     }
 
     if (!formData.companyName.trim()) {
-      newErrors.companyName = 'Ime podjetja je obvezno.';
+      newErrors.companyName = "Ime podjetja je obvezno.";
     }
 
     if (!formData.email.trim()) {
-      newErrors.email = 'E-poštni naslov je obvezen.';
+      newErrors.email = "E-poštni naslov je obvezen.";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email.trim())) {
-      newErrors.email = 'Vnesite veljaven poslovni e-poštni naslov.';
+      newErrors.email = "Vnesite veljaven poslovni e-poštni naslov.";
     }
 
     if (!formData.phone.trim()) {
-      newErrors.phone = 'Telefonska številka je obvezna.';
+      newErrors.phone = "Telefonska številka je obvezna.";
     } else if (!/^[\d\s\+\-\(\)]{7,20}$/.test(formData.phone.trim())) {
-      newErrors.phone = 'Vnesite veljavno telefonsko številko (npr. +386 69 803 622).';
+      newErrors.phone =
+        "Vnesite veljavno telefonsko številko (npr. +386 69 803 622).";
     }
 
     if (!formData.serviceRequired) {
-      newErrors.serviceRequired = 'Prosimo, izberite zahtevano storitev.';
+      newErrors.serviceRequired = "Prosimo, izberite zahtevano storitev.";
     }
 
     if (!formData.preferredDate) {
-      newErrors.preferredDate = 'Prosimo, izberite želeni datum sestanka.';
+      newErrors.preferredDate = "Prosimo, izberite želeni datum sestanka.";
     }
 
     if (!formData.projectLocation.trim()) {
-      newErrors.projectLocation = 'Prosimo, vnesite lokacijo projekta v Sloveniji.';
+      newErrors.projectLocation =
+        "Prosimo, vnesite lokacijo projekta v Sloveniji.";
     }
 
     return newErrors;
@@ -85,12 +88,17 @@ export const Appointment = ({ initialService = '', isContactPage = false }) => {
 
     // Clear field error on change
     if (errors[name]) {
-      setErrors((prev) => ({ ...prev, [name]: '' }));
+      setErrors((prev) => ({ ...prev, [name]: "" }));
     }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Prevent duplicate submissions
+    if (status.loading) {
+      return;
+    }
 
     const formValidationErrors = validate();
     if (Object.keys(formValidationErrors).length > 0) {
@@ -103,7 +111,7 @@ export const Appointment = ({ initialService = '', isContactPage = false }) => {
       submitted: false,
       success: false,
       isDemo: false,
-      message: ''
+      message: "",
     });
 
     try {
@@ -114,21 +122,22 @@ export const Appointment = ({ initialService = '', isContactPage = false }) => {
         submitted: true,
         success: response.success,
         isDemo: response.isDemo,
-        message: response.message
+        message: response.message,
       });
 
       if (response.success) {
         // Reset form fields
         setFormData({
-          fullName: '',
-          companyName: '',
-          email: '',
-          phone: '',
-          serviceRequired: '',
-          preferredDate: '',
-          preferredTime: '',
-          projectLocation: '',
-          message: ''
+          fullName: "",
+          companyName: "",
+          email: "",
+          phone: "",
+          serviceRequired: "",
+          preferredDate: "",
+          preferredTime: "",
+          projectLocation: "",
+          message: "",
+          _hp_website: "",
         });
         setErrors({});
       }
@@ -138,13 +147,18 @@ export const Appointment = ({ initialService = '', isContactPage = false }) => {
         submitted: true,
         success: false,
         isDemo: false,
-        message: 'Prišlo je do omrežne napake. Prosimo, poskusite znova ali nas pokličite po telefonu.'
+        message:
+          err?.message ||
+          "Prišlo je do omrežne napake. Prosimo, poskusite znova ali nas pokličite po telefonu.",
       });
     }
   };
 
   return (
-    <section className="appointment-section section-py bg-white" id="appointment-form">
+    <section
+      className="appointment-section section-py bg-white"
+      id="appointment-form"
+    >
       <div className="container">
         {!isContactPage && (
           <SectionTitle
@@ -161,9 +175,13 @@ export const Appointment = ({ initialService = '', isContactPage = false }) => {
             <span className="info-badge">
               <ShieldCheck size={16} /> Neposredna slovenska napotitev
             </span>
-            <h3 className="info-title">Potrebujete hitro napotitev delovne sile?</h3>
+            <h3 className="info-title">
+              Potrebujete hitro napotitev delovne sile?
+            </h3>
             <p className="info-desc">
-              Rezervirajte osebni sestanek ali posvet o projektu z našo vodstveno ekipo na vašem gradbišču ali na našem sedežu v Ljubljani.
+              Rezervirajte osebni sestanek ali posvet o projektu z našo
+              vodstveno ekipo na vašem gradbišču ali na našem sedežu v
+              Ljubljani.
             </p>
 
             <div className="info-contact-list">
@@ -189,13 +207,20 @@ export const Appointment = ({ initialService = '', isContactPage = false }) => {
               </div>
 
               <div className="info-contact-item">
-                <a href={`mailto:${companyContact.email}`} className="info-icon-wrap" aria-label="Uradni e-naslov">
+                <a
+                  href={`mailto:${companyContact.email}`}
+                  className="info-icon-wrap"
+                  aria-label="Uradni e-naslov"
+                >
                   <Mail size={18} />
                 </a>
                 <div>
                   <strong>Uradni e-naslov</strong>
                   <p>
-                    <a href={`mailto:${companyContact.email}`} style={{ color: 'inherit', textDecoration: 'none' }}>
+                    <a
+                      href={`mailto:${companyContact.email}`}
+                      style={{ color: "inherit", textDecoration: "none" }}
+                    >
                       {companyContact.email}
                     </a>
                   </p>
@@ -204,19 +229,22 @@ export const Appointment = ({ initialService = '', isContactPage = false }) => {
             </div>
 
             {/* Backend Integration Architecture Note */}
-            <div className="info-architecture-note">
+            {/* <div className="info-architecture-note">
               <Info size={16} className="note-icon" />
               <span>
                 <strong>Opomba o integraciji:</strong> Obrazec je povezan z <code>src/services/appointmentService.js</code>, popolnoma izoliran in pripravljen za REST API povezavo.
               </span>
-            </div>
+            </div> */}
           </div>
 
           {/* Form Column */}
           <div className="appointment-form-col">
             {/* Status Feedback Banner */}
             {status.submitted && (
-              <div className={`status-banner ${status.success ? 'status-success' : 'status-error'}`} role="status">
+              <div
+                className={`status-banner ${status.success ? "status-success" : "status-error"}`}
+                role="status"
+              >
                 {status.success ? (
                   <CheckCircle2 size={24} className="status-icon" />
                 ) : (
@@ -224,19 +252,44 @@ export const Appointment = ({ initialService = '', isContactPage = false }) => {
                 )}
                 <div>
                   <h4 className="status-heading">
-                    {status.success ? 'Zahtevek za delovno silo zabeležen (Predstavitveni način)' : 'Napaka pri oddaji'}
+                    {status.success
+                      ? "Zahtevek za termin je bil uspešno oddan"
+                      : "Napaka pri oddaji"}
                   </h4>
                   <p className="status-msg">{status.message}</p>
                   {status.isDemo && (
                     <span className="demo-notice">
-                      (Zaledna podatkovna baza še ni povezana. Vsa preverjanja polj so se uspešno izvedla v sprednjem delu).
+                      (Zaledna podatkovna baza še ni povezana. Vsa preverjanja
+                      polj so se uspešno izvedla v sprednjem delu).
                     </span>
                   )}
                 </div>
               </div>
             )}
 
-            <form onSubmit={handleSubmit} noValidate className="appointment-form">
+            <form
+              onSubmit={handleSubmit}
+              noValidate
+              className="appointment-form"
+            >
+              {/* Invisible Honeypot field for spam prevention */}
+              <input
+                type="text"
+                name="_hp_website"
+                id="_hp_website"
+                value={formData._hp_website || ""}
+                onChange={handleChange}
+                style={{
+                  display: "none",
+                  position: "absolute",
+                  left: "-9999px",
+                  visibility: "hidden",
+                }}
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+              />
+
               <div className="form-grid">
                 {/* Full Name */}
                 <div className="form-group">
@@ -250,10 +303,12 @@ export const Appointment = ({ initialService = '', isContactPage = false }) => {
                     value={formData.fullName}
                     onChange={handleChange}
                     placeholder="npr. Janez Novak"
-                    className={`form-input ${errors.fullName ? 'input-error' : ''}`}
+                    className={`form-input ${errors.fullName ? "input-error" : ""}`}
                     disabled={status.loading}
                   />
-                  {errors.fullName && <span className="error-text">{errors.fullName}</span>}
+                  {errors.fullName && (
+                    <span className="error-text">{errors.fullName}</span>
+                  )}
                 </div>
 
                 {/* Company Name */}
@@ -268,10 +323,12 @@ export const Appointment = ({ initialService = '', isContactPage = false }) => {
                     value={formData.companyName}
                     onChange={handleChange}
                     placeholder="npr. Gradbeno podjetje d.o.o."
-                    className={`form-input ${errors.companyName ? 'input-error' : ''}`}
+                    className={`form-input ${errors.companyName ? "input-error" : ""}`}
                     disabled={status.loading}
                   />
-                  {errors.companyName && <span className="error-text">{errors.companyName}</span>}
+                  {errors.companyName && (
+                    <span className="error-text">{errors.companyName}</span>
+                  )}
                 </div>
 
                 {/* Email Address */}
@@ -286,10 +343,12 @@ export const Appointment = ({ initialService = '', isContactPage = false }) => {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="ime@podjetje.si"
-                    className={`form-input ${errors.email ? 'input-error' : ''}`}
+                    className={`form-input ${errors.email ? "input-error" : ""}`}
                     disabled={status.loading}
                   />
-                  {errors.email && <span className="error-text">{errors.email}</span>}
+                  {errors.email && (
+                    <span className="error-text">{errors.email}</span>
+                  )}
                 </div>
 
                 {/* Phone Number */}
@@ -304,10 +363,12 @@ export const Appointment = ({ initialService = '', isContactPage = false }) => {
                     value={formData.phone}
                     onChange={handleChange}
                     placeholder="+386 40 123 456"
-                    className={`form-input ${errors.phone ? 'input-error' : ''}`}
+                    className={`form-input ${errors.phone ? "input-error" : ""}`}
                     disabled={status.loading}
                   />
-                  {errors.phone && <span className="error-text">{errors.phone}</span>}
+                  {errors.phone && (
+                    <span className="error-text">{errors.phone}</span>
+                  )}
                 </div>
 
                 {/* Service Required */}
@@ -320,7 +381,7 @@ export const Appointment = ({ initialService = '', isContactPage = false }) => {
                     name="serviceRequired"
                     value={formData.serviceRequired}
                     onChange={handleChange}
-                    className={`form-select ${errors.serviceRequired ? 'input-error' : ''}`}
+                    className={`form-select ${errors.serviceRequired ? "input-error" : ""}`}
                     disabled={status.loading}
                   >
                     <option value="">-- Izberite storitev / profil --</option>
@@ -350,7 +411,7 @@ export const Appointment = ({ initialService = '', isContactPage = false }) => {
                     value={formData.projectLocation}
                     onChange={handleChange}
                     placeholder="npr. Ljubljana / Maribor / Celje"
-                    className={`form-input ${errors.projectLocation ? 'input-error' : ''}`}
+                    className={`form-input ${errors.projectLocation ? "input-error" : ""}`}
                     disabled={status.loading}
                   />
                   {errors.projectLocation && (
@@ -370,9 +431,9 @@ export const Appointment = ({ initialService = '', isContactPage = false }) => {
                       name="preferredDate"
                       value={formData.preferredDate}
                       onChange={handleChange}
-                      className={`form-input ${errors.preferredDate ? 'input-error' : ''}`}
+                      className={`form-input ${errors.preferredDate ? "input-error" : ""}`}
                       disabled={status.loading}
-                      min={new Date().toISOString().split('T')[0]}
+                      min={new Date().toISOString().split("T")[0]}
                     />
                     <Calendar size={16} className="field-icon" />
                   </div>
@@ -430,7 +491,8 @@ export const Appointment = ({ initialService = '', isContactPage = false }) => {
                   Zahtevajte termin sestanka
                 </Button>
                 <span className="form-privacy-note">
-                  Vaši podatki o projektu so strogo varovani. Odgovorimo v roku 24 delovnih ur.
+                  Vaši podatki o projektu so strogo varovani. Odgovorimo v roku
+                  24 delovnih ur.
                 </span>
               </div>
             </form>

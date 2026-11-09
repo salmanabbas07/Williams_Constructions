@@ -1,54 +1,82 @@
 // src/services/appointmentService.js
 /**
- * Appointment Service (Frontend Integration Placeholder)
- * 
- * NOTE: As specified in PRD Section 8 & 16:
- * - No external database (MongoDB/MySQL) or backend API is currently connected.
- * - This file isolates future API integration so the backend can be 
- *   plugged in later without modifying frontend components.
+ * Appointment Service
+ *
+ * Connects the frontend appointment request form to the Core PHP backend.
+ * Production and local dev endpoint: /backend/appointment.php
  */
 
+/**
+ * Submit an appointment request to the Core PHP backend.
+ *
+ * @param {Object} formData Form fields submitted by the visitor
+ * @returns {Promise<{success: boolean, message: string, data?: any}>}
+ */
 export const submitAppointmentRequest = async (formData) => {
-  // Simulate network latency for realistic UX testing
-  await new Promise((resolve) => setTimeout(resolve, 800));
+  try {
+    const response = await fetch('/backend/appointment.php', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    });
 
-  // Basic validation check
-  if (!formData.fullName || !formData.email || !formData.phone || !formData.serviceRequired) {
+    const data = await response.json().catch(() => null);
+
+    if (!response.ok) {
+      return {
+        success: false,
+        message: data?.message || 'Unable to submit your appointment request. Please try again.'
+      };
+    }
+
+    return {
+      success: Boolean(data?.success),
+      message: data?.message || 'Your appointment request has been submitted successfully.',
+      data: data
+    };
+  } catch (error) {
     return {
       success: false,
-      message: 'Prosimo, izpolnite vsa obvezna polja.'
+      message: 'Prišlo je do omrežne napake. Prosimo, preverite povezavo ali poskusite znova.'
     };
   }
-
-  // Frontend Demo / Future Integration Response in Slovenian
-  return {
-    success: true,
-    isDemo: true,
-    message: 'Povpraševanje za delovno silo je bilo uspešno preverjeno! (Predstavitveni način: Povezava z zalednim sistemom REST API je pripravljena za naslednjo fazo).',
-    data: {
-      ...formData,
-      submittedAt: new Date().toISOString()
-    }
-  };
 };
 
+/**
+ * Contact Message Submission (kept for compatibility with contact page components)
+ */
 export const submitContactMessage = async (formData) => {
-  await new Promise((resolve) => setTimeout(resolve, 800));
+  try {
+    const response = await fetch('/backend/appointment.php', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    });
 
-  if (!formData.name || !formData.email || !formData.message) {
+    const data = await response.json().catch(() => null);
+
+    if (!response.ok) {
+      return {
+        success: false,
+        message: data?.message || 'Unable to submit your message. Please try again.'
+      };
+    }
+
+    return {
+      success: Boolean(data?.success),
+      message: data?.message || 'Vaše sporočilo je bilo uspešno oddano.',
+      data: data
+    };
+  } catch (error) {
     return {
       success: false,
-      message: 'Prosimo, vnesite vaše ime, e-poštni naslov in sporočilo.'
+      message: 'Prišlo je do omrežne napake. Prosimo, poskusite znova ali nas pokličite po telefonu.'
     };
   }
-
-  return {
-    success: true,
-    isDemo: true,
-    message: 'Vaše sporočilo je bilo sprejeto v predstavitvenem načinu. Povezava z zalednim strežnikom sledi v prihodnji razvojni fazi.',
-    data: {
-      ...formData,
-      submittedAt: new Date().toISOString()
-    }
-  };
 };

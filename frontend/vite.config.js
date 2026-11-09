@@ -6,7 +6,13 @@ export default defineConfig({
   plugins: [react()],
   server: {
     port: 3000,
-    open: false
+    open: false,
+    proxy: {
+      '/backend': {
+        target: 'http://localhost:8000',
+        changeOrigin: true
+      }
+    }
   },
   build: {
     rollupOptions: {

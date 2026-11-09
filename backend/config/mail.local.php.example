@@ -1,0 +1,16 @@
+<?php
+/**
+ * Wilma Construction - Local Mail Configuration Template
+ *
+ * Copy this file to `mail.local.php` and fill in your real Gmail credentials.
+ * `mail.local.php` is ignored by Git, keeping your credentials secure.
+ */
+
+return [
+    'smtp_username'   => 'your-business-email@gmail.com',
+    'smtp_password'   => 'your-16-char-app-password',
+    'recipient_email' => 'your-business-email@gmail.com',
+    'recipient_name'  => 'Wilma Construction Management',
+    'from_email'      => 'your-business-email@gmail.com',
+    'from_name'       => 'Wilma Construction Website',
+];
