@@ -435,15 +435,15 @@
     gap: 0.5rem;
   }
   .topbar-right {
-    flex-direction: column;
+    /* flex-direction: column; */
     align-items: center;
     justify-content: center;
     gap: 0.25rem;
     width: 100%;
   }
-  .topbar-divider {
+  /* .topbar-divider {
     display: none;
-  }
+  } */
   .topbar-link {
     font-size: 0.75rem;
     line-height: 1.25;
@@ -469,7 +469,8 @@
     padding-bottom: 0.35rem;
   }
   .topbar-link {
-    font-size: 0.72rem;
+    font-size: 9px;
+    /* gap: 10px; */
   }
   .navbar-inner {
     height: 72px;
