@@ -16,8 +16,8 @@ export const Home = () => {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     name: 'Williams Services & Williams Constructions',
-    image: 'https://thewilliamsconstructions.com/favicon.svg',
-    url: 'https://thewilliamsconstructions.com',
+    image: 'https://williamscleaning.si/og-image.jpg',
+    url: 'https://williamscleaning.si/',
     telephone: '+38669803622',
     address: {
       '@type': 'PostalAddress',
@@ -36,8 +36,8 @@ export const Home = () => {
   return (
     <div className="home-page">
       <SEO
-        title="Gradbena delovna sila in tehnični kader v Sloveniji"
-        description="Williams Constructions zagotavlja certificirane varilce (TIG, MIG/MAG), usposobljene zidarje, strojnike težke gradbene mehanizacije in zanesljivo delovno silo po vsej Sloveniji."
+        title="Williams Constructions | Gradbena delovna sila Slovenija"
+        description="Williams Constructions zagotavlja certificirane varilce, zidarje in strojnike težke gradbene mehanizacije s popolno pravno skladnostjo po vsej Sloveniji."
         canonical="/"
         schemaData={homeSchema}
       />

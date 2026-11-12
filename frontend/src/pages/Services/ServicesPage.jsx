@@ -11,8 +11,8 @@ export const ServicesPage = () => {
   return (
     <div className="services-page">
       <SEO
-        title="Storitve - Gradbena dela, varilci in upravljavci mehanizacije v Sloveniji"
-        description="Oglejte si obsežne storitve Williams Constructions: Zidarstvo, TIG/MIG varilci, upravljavci bagrov, podizvajalstvo in usposobljena gradbena delovna sila po vsej Sloveniji."
+        title="Gradbene storitve in varilci | Williams Constructions"
+        description="Certificirani varilci TIG/MIG, izkušeni zidarji, upravljavci težke mehanizacije in gradbeni delavci z urejenimi dovoljenji za podjetja po vsej Sloveniji."
         canonical="/services"
       />
 

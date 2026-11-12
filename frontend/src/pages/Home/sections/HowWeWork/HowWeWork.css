@@ -179,6 +179,7 @@
   border-left: 4px solid var(--burnt-orange);
 }
 
+.guarantee-col h3,
 .guarantee-col h4 {
   color: var(--burnt-orange);
   font-size: 1.15rem;

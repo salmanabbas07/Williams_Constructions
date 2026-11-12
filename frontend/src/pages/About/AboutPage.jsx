@@ -12,8 +12,8 @@ export const AboutPage = () => {
   return (
     <div className="about-page">
       <SEO
-        title="O nas – Williams Construction"
-        description="Dobrodošli pri William Construction, vašem zaupanja vrednem partnerju na področju gradbeništva in celovitih gradbenih storitev. Že vrsto let gradimo z vizijo, natančnostjo in nepopustljivo predanostjo kakovosti."
+        title="O podjetju Williams Constructions | Gradbeni partner"
+        description="Spoznajte Williams Constructions, zaupanja vrednega partnerja za certificirano gradbeno delovno silo, tehnični kader in celovite gradbene storitve v Sloveniji."
         canonical="/about"
       />
 

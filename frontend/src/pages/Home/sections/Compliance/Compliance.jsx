@@ -52,7 +52,7 @@ export const Compliance = () => {
                 <FileBadge size={26} />
               </div>
               <div>
-                <h4 className="guarantee-title">Skladno s slovensko zakonodajo</h4>
+                <h3 className="guarantee-title">Skladno s slovensko zakonodajo</h3>
                 <p className="guarantee-text">
                   Enotno dovoljenje za prebivanje in delo ter izpit iz VZD izdana pred prvim delovnim dnem.
                 </p>

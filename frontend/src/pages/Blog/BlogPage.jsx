@@ -31,8 +31,8 @@ export const BlogPage = () => {
   return (
     <div className="blog-page">
       <SEO
-        title="Blog in gradbeni vpogledi - Delovna sila, varjenje in dovoljenja v Sloveniji"
-        description="Preberite strokovne članke o predpisih za delovna dovoljenja v slovenskem gradbeništvu, varilskih standardih in vodenju mednarodnih ekip podjetja Williams Services."
+        title="Gradbeni blog in vpogledi | Williams Constructions"
+        description="Strokovni članki o delovnih dovoljenjih v slovenskem gradbeništvu, varilskih standardih, varnosti na gradbišču in učinkovitem vodenju gradbenih ekip."
         canonical="/blog"
       />
 
@@ -87,7 +87,7 @@ export const BlogPage = () => {
           {filteredPosts.length === 0 ? (
             <div className="no-articles-found">
               <BookOpen size={48} className="empty-icon" />
-              <h3>Ni najdenih člankov</h3>
+              <h2>Ni najdenih člankov</h2>
               <p>Poskusite spremeniti iskalni niz ali izberite drugo kategorijo.</p>
               <Button onClick={() => { setSelectedCategory('Vse'); setSearchQuery(''); }} variant="outline" size="sm">
                 Ponastavi filtre
@@ -119,7 +119,7 @@ export const BlogPage = () => {
                       </span>
                     </div>
 
-                    <h3 className="blog-card-title">{post.title}</h3>
+                    <h2 className="blog-card-title">{post.title}</h2>
                     
                     <p className="blog-card-summary">{post.summary}</p>
 

@@ -175,13 +175,19 @@ export const Appointment = ({ initialService = "", isContactPage = false }) => {
             <span className="info-badge">
               <ShieldCheck size={16} /> Neposredna slovenska napotitev
             </span>
-            <h3 className="info-title">
-              Potrebujete hitro napotitev delovne sile?
-            </h3>
+            {isContactPage ? (
+              <h2 className="info-title">
+                Potrebujete hitro napotitev delovne sile?
+              </h2>
+            ) : (
+              <h3 className="info-title">
+                Potrebujete hitro napotitev delovne sile?
+              </h3>
+            )}
             <p className="info-desc">
-              Rezervirajte osebni sestanek ali posvet o projektu z našo
-              vodstveno ekipo na vašem gradbišču ali na našem sedežu v
-              Ljubljani.
+              {isContactPage
+                ? 'Rezervirajte osebni sestanek ali strokovni posvet o gradbenem projektu z našo vodstveno ekipo neposredno na vašem gradbišču ali na našem sedežu na Kotnikovi ulici 28 v Ljubljani. Po pregledu obsega del, potrebnih profilov in predvidene časovnice vam pripravimo jasen predlog napotitve usposobljenih ter pravno skladnih ekip po vsej Sloveniji.'
+                : 'Rezervirajte osebni sestanek ali posvet o projektu z našo vodstveno ekipo na vašem gradbišču ali na našem sedežu v Ljubljani.'}
             </p>
 
             <div className="info-contact-list">
@@ -228,13 +234,22 @@ export const Appointment = ({ initialService = "", isContactPage = false }) => {
               </div>
             </div>
 
-            {/* Backend Integration Architecture Note */}
-            {/* <div className="info-architecture-note">
-              <Info size={16} className="note-icon" />
-              <span>
-                <strong>Opomba o integraciji:</strong> Obrazec je povezan z <code>src/services/appointmentService.js</code>, popolnoma izoliran in pripravljen za REST API povezavo.
-              </span>
-            </div> */}
+            {isContactPage && (
+              <div className="info-architecture-note">
+                <Info size={16} className="note-icon" />
+                <div>
+                  <p>
+                    <strong>Kako pripraviti povpraševanje za najhitrejši odziv:</strong> V opisu projekta navedite vrsto potrebnega kadra (varilci ISO 9606-1 za postopke TIG/MIG/MAG, izkušeni zidarji, tesarji za opaže, armirači, ključavničarji, upravljavci težke gradbene mehanizacije in viličarjev ter splošni gradbeni delavci), predvideno število delavcev, točno lokacijo gradbišča v Sloveniji ter želeni datum začetka del. Naša ekipa za naročnike pregledno oceni zahteve in v 24 delovnih urah pripravi natančen terminski načrt mobilizacije ter komercialno ponudbo.
+                  </p>
+                  <p>
+                    <strong>Pravna skladnost in terenska podpora po vsej Sloveniji:</strong> Vsi naši napoteni in najeti delavci imajo pred prvim prihodom na delovišče urejena enotna dovoljenja za prebivanje in delo v Republiki Sloveniji, obvezno socialno zavarovanje (obrazec M-1), davčno številko, veljavna spričevala preventivnih zdravniških pregledov pri pooblaščeni medicini dela, opravljene izpite iz varnosti in zdravja pri delu ter požarne varnosti, osnovno osebno varovalno opremo, čisto nastanitev in vsakodnevni prevoz do objekta.
+                  </p>
+                  <p>
+                    <strong>Regijska pokritost in roki napotitve:</strong> Delovne skupine in tehnične strokovnjake zagotavljamo na gradbiščih in v industrijskih obratih po vsej Sloveniji – vključno z Ljubljano in Osrednjeslovensko regijo, Mariborom, Celjem, Kranjem, Koprom, Novo Gorico, Velenjem in Novim mestom. Za predhodno preverjene profile iz naše slovenske baze traja napotitev od 3 do 10 delovnih dni, naši dvojezični koordinatorji pa prevzamejo vso vsakodnevno komunikacijo med vašim vodjo gradbišča in delovno ekipo. V kolikor delavec ne izpolnjuje pričakovane norme ali strokovnosti, v sklopu pogodbenega jamstva brezplačno organiziramo ustrezno zamenjavo.
+                  </p>
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Form Column */}
@@ -491,10 +506,16 @@ export const Appointment = ({ initialService = "", isContactPage = false }) => {
                   Zahtevajte termin sestanka
                 </Button>
                 <span className="form-privacy-note">
-                  Vaši podatki o projektu so strogo varovani. Odgovorimo v roku
-                  24 delovnih ur.
+                  {isContactPage
+                    ? 'Vaši podatki o projektu so strogo varovani skladno z GDPR in ZVOP-2. Po oddaji povpraševanja naš koordinator preveri razpoložljivost ustreznih ekip v naši bazi in z vami stopi v stik v roku 24 delovnih ur za uskladitev sestanka ali neposredni ogled lokacije.'
+                    : 'Vaši podatki o projektu so strogo varovani. Odgovorimo v roku 24 delovnih ur.'}
                 </span>
               </div>
+              {isContactPage && (
+                <p className="form-privacy-note" style={{ marginTop: '14px' }}>
+                  Podjetje Williams Services d.o.o. omogoča prilagodljive oblike sodelovanja za slovenska gradbena, montažna in industrijska podjetja – od napotitve posameznih certificiranih varilcev ISO 9606-1 za postopke TIG/MIG/MAG in usposobljenih strojnikov težke mehanizacije do vzpostavitve celovitih zidarskih, opažnih tesarskih ter armiraških ekip. V opisu povpraševanja navedite gradbeno fazo, predvideno število delavcev, zahtevane ateste in lokacijo objekta v Sloveniji, naša koordinacijska služba pa vam v 24 delovnih urah pripravi natančno časovnico mobilizacije kadra z vnaprej urejeno dokumentacijo skladnosti, vključno z enotnim dovoljenjem, prijavo M-1 ter spričevalom VZD.
+                </p>
+              )}
             </form>
           </div>
         </div>

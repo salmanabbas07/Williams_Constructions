@@ -1,6 +1,6 @@
 // src/components/Motion/FadeIn.jsx
 import React from 'react';
-import { motion, useReducedMotion } from 'framer-motion';
+import { m, useReducedMotion } from 'framer-motion';
 
 export const FadeIn = ({
   children,
@@ -35,7 +35,7 @@ export const FadeIn = ({
   const { x, y } = getOffsets();
 
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0, x, y }}
       whileInView={{ opacity: 1, x: 0, y: 0 }}
       viewport={{ once: true, margin: '-40px' }}
@@ -48,7 +48,7 @@ export const FadeIn = ({
       style={style}
     >
       {children}
-    </motion.div>
+    </m.div>
   );
 };
 

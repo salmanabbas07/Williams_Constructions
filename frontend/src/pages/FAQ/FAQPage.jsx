@@ -35,8 +35,8 @@ export const FAQPage = () => {
   return (
     <div className="faq-page">
       <SEO
-        title="Pogosta vprašanja - Delovna dovoljenja in gradbena delovna sila v Sloveniji"
-        description="Poiščite odgovore na pogosta vprašanja glede delovnih dovoljenj, rokov napotitve, certifikatov varilcev in dvojezičnega vodenja z Williams Services."
+        title="Pogosta vprašanja in odgovori | Williams Constructions"
+        description="Odgovori na pogosta vprašanja glede delovnih dovoljenj, rokov napotitve delavcev, certifikatov varilcev ter vodenja projektov z Williams Constructions."
         canonical="/faq"
         schemaData={faqSchema}
       />

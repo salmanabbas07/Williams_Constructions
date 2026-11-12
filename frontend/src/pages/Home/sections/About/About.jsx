@@ -138,9 +138,9 @@ export const About = ({ variant = 'preview' }) => {
             {/* In full mode (About page), show Benefits Heading and 4 Cards */}
             {isFull && (
               <>
-                <h4 className="about-benefits-heading">
+                <h3 className="about-benefits-heading">
                   Zakaj izbrati nas?
-                </h4>
+                </h3>
 
                 {/* 4 Benefit Cards Grid */}
                 <div className="about-benefits-grid">

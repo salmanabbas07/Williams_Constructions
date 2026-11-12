@@ -53,6 +53,10 @@ export const Footer = () => {
                 <img 
                   src="/images/newLOGO.png" 
                   alt="Williams Constructions Group" 
+                  width={260}
+                  height={90}
+                  loading="lazy"
+                  decoding="async"
                   className="footer-brand-logo"
                 />
               </Link>
@@ -76,7 +80,7 @@ export const Footer = () => {
 
             {/* Column 2: Quick Links */}
             <div className="footer-col">
-              <h4 className="footer-col-title">Hitre povezave</h4>
+              <p className="footer-col-title">Hitre povezave</p>
               <ul className="footer-link-list">
                 <li>
                   <Link to="/about" className="footer-link">
@@ -113,7 +117,7 @@ export const Footer = () => {
 
             {/* Column 3: Our Services */}
             <div className="footer-col">
-              <h4 className="footer-col-title">Naše storitve</h4>
+              <p className="footer-col-title">Naše storitve</p>
               <ul className="footer-link-list">
                 {servicesData.map((service) => (
                   <li key={service.id}>
@@ -127,7 +131,7 @@ export const Footer = () => {
 
             {/* Column 4: Get In Touch */}
             <div className="footer-col footer-col-contact">
-              <h4 className="footer-col-title">Stopite v stik</h4>
+              <p className="footer-col-title">Stopite v stik</p>
               
               <div className="footer-contact-items">
                 <div className="footer-contact-row">

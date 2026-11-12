@@ -76,8 +76,12 @@ export const Hero = () => {
               <img 
                 src={slide.image} 
                 alt={slide.heading} 
+                width={1600}
+                height={929}
                 className="hero-bg-image" 
                 loading={slide.id === 1 ? 'eager' : 'lazy'}
+                fetchPriority={slide.id === 1 ? 'high' : 'auto'}
+                decoding={slide.id === 1 ? 'sync' : 'async'}
               />
               <div className="hero-dark-overlay" />
             </div>
@@ -91,9 +95,15 @@ export const Hero = () => {
                   </span>
                 </div>
 
-                <h1 className="hero-heading">
-                  {slide.heading}
-                </h1>
+                {slide.id === 1 ? (
+                  <h1 className="hero-heading">
+                    {slide.heading}
+                  </h1>
+                ) : (
+                  <p className="hero-heading">
+                    {slide.heading}
+                  </p>
+                )}
 
                 <p className="hero-description">
                   {slide.description}

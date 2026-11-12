@@ -21,8 +21,8 @@ export const ContactPage = () => {
   return (
     <div className="contact-page">
       <SEO
-        title="Kontakt - Williams Services & Constructions Ljubljana, Slovenija"
-        description="Stopite v stik z Williams Constructions v Ljubljani. Pokličite +386 69 803 622 ali oddajte spletno povpraševanje za gradbeno delovno silo, varilce in zidarje."
+        title="Kontakt in povpraševanje | Williams Constructions SI"
+        description="Kontaktirajte Williams Constructions v Ljubljani na +386 69 803 622 za najem gradbenih delavcev, certificiranih varilcev, zidarjev in strojnikov."
         canonical="/contact"
       />
 
@@ -30,7 +30,7 @@ export const ContactPage = () => {
         src="/images/contect-banner.webp"
         badge="Stopite v stik"
         title="Kontaktirajte Williams Constructions"
-        subtitle="Stopite v neposreden stik z našo slovensko ekipo glede zagotavljanja delavcev na gradbišču, zidarskega podizvajalstva ali specializiranih varilskih del."
+        subtitle="Stopite v neposreden stik z našo slovensko ekipo glede zagotavljanja delavcev na gradbišču, zidarskega podizvajalstva, strojnikov težke mehanizacije ali specializiranih varilskih del za projekte v Ljubljani, Mariboru, Celju, Kranju, Novem mestu, Kopru in po vsej Sloveniji."
         breadcrumbs={[{ label: 'Kontakt' }]}
       />
 
@@ -43,9 +43,9 @@ export const ContactPage = () => {
               <div className="contact-feature-icon">
                 <MapPin size={24} />
               </div>
-              <h3 className="feature-title">Sedež podjetja</h3>
+              <h2 className="feature-title">Sedež podjetja</h2>
               <p className="feature-detail">{companyContact.address}</p>
-              <span className="feature-sub">Ljubljana – Poslovno središče</span>
+              <span className="feature-sub">Ljubljana – Poslovno središče za osebne sestanke naročnikov, podpis pogodb o najemu ali podizvajanju delavne sile, vpogled v veljavne varilske ateste ter operativno usklajevanje napotitev za vsa slovenska gradbišča. Sprejemamo investitorje in glavne izvajalce iz Osrednjeslovenske, Podravske, Savinjske, Gorenjske, Dolenjske in Obalno-kraške regije vsak delovni dan.</span>
             </div>
 
             {/* Card 2: Phone */}
@@ -53,7 +53,7 @@ export const ContactPage = () => {
               <div className="contact-feature-icon">
                 <Phone size={24} />
               </div>
-              <h3 className="feature-title">Telefonske številke</h3>
+              <h2 className="feature-title">Telefonske številke</h2>
               <div className="phone-links-group">
                 {companyContact.phones.map((phone) => (
                   <a key={phone.display} href={phone.link} className="contact-phone-item">
@@ -61,7 +61,7 @@ export const ContactPage = () => {
                   </a>
                 ))}
               </div>
-              <span className="feature-sub">Neposredna linija do vodstva in dispečerja</span>
+              <span className="feature-sub">Neposredna telefonska linija do vodstva podjetja in terenskega dispečerja za takojšnje informacije o razpoložljivih zidarjih, opažnih tesarjih, armiračih, varilcih TIG/MIG/MAG, ključavničarjih in strojnikih težke mehanizacije. Pokličite nas ob nujnih terminskih pospešitvah, izrednih remontih ali potrebi po hitri razširitvi obstoječe gradbene skupine kjerkoli v Sloveniji.</span>
             </div>
 
             {/* Card 3: Email */}
@@ -69,11 +69,11 @@ export const ContactPage = () => {
               <a href={`mailto:${companyContact.email}`} className="contact-feature-icon" aria-label="E-poštna povpraševanja">
                 <Mail size={24} />
               </a>
-              <h3 className="feature-title">E-poštna povpraševanja</h3>
+              <h2 className="feature-title">E-poštna povpraševanja</h2>
               <a href={`mailto:${companyContact.email}`} className="contact-email-item">
                 {companyContact.email}
               </a>
-              <span className="feature-sub">Odgovorimo v roku 24 delovnih ur</span>
+              <span className="feature-sub">Odgovorimo v roku 24 delovnih ur s konkretno oceno razpoložljivosti kadra, časovnico mobilizacije ter pregledno komercialno ponudbo. V sporočilo vključite vrsto del, število delavcev, zahtevane certifikate ISO 9606-1, lokacijo gradbišča in predviden začetek izvedbe, naši koordinatorji pa pripravijo natančen predlog napotitve in dokumentacije.</span>
             </div>
 
             {/* Card 4: Working Hours */}
@@ -81,9 +81,9 @@ export const ContactPage = () => {
               <div className="contact-feature-icon">
                 <Clock size={24} />
               </div>
-              <h3 className="feature-title">Delovni čas</h3>
+              <h2 className="feature-title">Delovni čas</h2>
               <p className="feature-detail">{companyContact.workingHours}</p>
-              <span className="feature-sub highlight-gold">24/7 Terensko usklajevanje na gradbišču</span>
+              <span className="feature-sub highlight-gold">24/7 terensko usklajevanje na gradbišču za tekoče projekte, reševanje zastojev, sprotno spremljanje prisotnosti in nujne nadomestitve delavcev. Naši dvojezični koordinatorji zagotavljajo redno podporo vodjem del med enojnim ali dvoizmenskim delom, medtem ko pisarniška ekipa skrbi za pogodbeno inšpekcijsko dokumentacijo skozi celotno gradbeno sezono.</span>
             </div>
           </div>
         </div>
@@ -97,8 +97,8 @@ export const ContactPage = () => {
             <div className="map-pin-pulse">
               <MapPin size={32} className="map-pin-icon" />
             </div>
-            <h4>Williams Services d.o.o.</h4>
-            <p>Kotnikova ulica 28, 1000 Ljubljana, Slovenija</p>
+            <h2>Williams Services d.o.o.</h2>
+            <p>Kotnikova ulica 28, 1000 Ljubljana, Slovenija – Poslovna pisarna za osebni posvet z naročniki, pregled veljavne delovnopravne in varnostne dokumentacije delavcev (M-1, enotno dovoljenje, VZD, medicina dela) ter natančno načrtovanje stabilnih gradbenih, tesarskih, varilskih in strojniških ekip za projekte po vsej Sloveniji. Parkiranje za obiskovalce je urejeno v neposredni bližini poslovne stavbe ob predhodni najavi termina po telefonu ali preko spodnjega kontaktnega obrazca.</p>
             <a 
               href="https://maps.google.com/?q=Kotnikova+ulica+28+1000+Ljubljana+Slovenia"
               target="_blank" 

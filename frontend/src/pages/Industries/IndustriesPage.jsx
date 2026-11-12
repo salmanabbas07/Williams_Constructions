@@ -11,8 +11,8 @@ export const IndustriesPage = () => {
   return (
     <div className="industries-page">
       <SEO
-        title="Projekti in panoge - Gradbeništvo, infrastruktura, logistika in proizvodnja v Sloveniji"
-        description="Williams Constructions zagotavlja preverjeno delovno silo za stanovanjsko gradnjo, nizke gradnje, varilske delavnice, tovorni promet in proizvodnjo po vsej Sloveniji."
+        title="Projekti in gradbene panoge | Williams Constructions"
+        description="Zagotavljamo preverjeno delovno silo za visoke in nizke gradnje, infrastrukturo, varilske delavnice, logistiko ter industrijsko proizvodnjo po Sloveniji."
         canonical="/projects"
       />
 

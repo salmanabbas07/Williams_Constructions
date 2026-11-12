@@ -114,6 +114,14 @@
   word-break: break-word;
 }
 
+.info-architecture-note p {
+  margin: 0 0 0.65rem 0;
+}
+
+.info-architecture-note p:last-child {
+  margin-bottom: 0;
+}
+
 .note-icon {
   color: var(--burnt-orange);
   flex-shrink: 0;

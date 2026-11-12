@@ -9,8 +9,9 @@ export const NotFoundPage = () => {
   return (
     <div className="not-found-page">
       <SEO
-        title="404 - Stran v izdelavi ali ni bila najdena"
-        description="Zahtevana stran na spletnem mestu Williams Constructions ni bila najdena."
+        title="Zahtevana stran ne obstaja | Williams Constructions"
+        description="Zahtevana stran na spletnem mestu Williams Constructions ni bila najdena. Obiščite domačo stran ali si oglejte naše gradbene in kadrovske storitve."
+        noIndex={true}
       />
 
       <div className="container not-found-container section-py">

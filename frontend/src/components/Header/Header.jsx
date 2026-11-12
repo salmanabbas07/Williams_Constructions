@@ -121,6 +121,11 @@ export const Header = () => {
             <img 
               src="/images/newLOGO.png" 
               alt="Williams Constructions Group" 
+              width={220}
+              height={70}
+              loading="eager"
+              fetchPriority="high"
+              decoding="sync"
               className="header-brand-logo"
             />
           </Link>

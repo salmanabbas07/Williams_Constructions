@@ -86,8 +86,10 @@
 }
 
 .footer-col-title {
+  font-family: var(--font-heading);
   font-size: 1.15rem;
   font-weight: 700;
+  line-height: 1.25;
   color: #FFFFFF;
   margin-bottom: 1.5rem;
   position: relative;

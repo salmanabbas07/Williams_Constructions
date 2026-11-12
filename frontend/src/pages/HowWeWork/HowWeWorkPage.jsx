@@ -11,8 +11,8 @@ export const HowWeWorkPage = () => {
   return (
     <div className="how-we-work-page">
       <SEO
-        title="Kako delamo - 6-stopenjski postopek napotitve delavcev v Sloveniji"
-        description="Spoznajte, kako Williams Services izbira, ureja delovna dovoljenja, uvaja in vodi gradbene mojstre ter strojnike za podjetja v Sloveniji."
+        title="Kako delamo – Napotitev kadra | Williams Constructions"
+        description="Spoznajte naš 6-stopenjski postopek izbire, urejanja delovnih dovoljenj, uvajanja in vodenja gradbenih delavcev za zanesljivo delo na vaših projektih."
         canonical="/how-we-work"
       />
 

@@ -3,12 +3,12 @@
   "short_name": "Williams",
   "description":"Strokovna delovna sila in kadrovske storitve",
   "dir": "auto",
-  "lang": "en-US",
+  "lang": "sl",
   "display": "standalone",
   "orientation": "any",
   "start_url": "/?homescreen=1",
   "background_color": "#fff",
-  "theme_color": "#fff",
+  "theme_color": "#022B58",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",

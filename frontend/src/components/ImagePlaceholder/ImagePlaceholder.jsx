@@ -35,6 +35,15 @@ export const ImagePlaceholder = ({
 
   const hasRealImage = Boolean(src) && !imageError;
 
+  // Derive deterministic intrinsic dimensions from aspectRatio to eliminate CLS
+  const [ratioW = 16, ratioH = 9] = String(aspectRatio)
+    .split('/')
+    .map((n) => parseFloat(n) || 0);
+  const intrinsicWidth = 800;
+  const intrinsicHeight = ratioW > 0 && ratioH > 0
+    ? Math.round((intrinsicWidth * ratioH) / ratioW)
+    : 450;
+
   return (
     <div
       className={`image-placeholder-container ${className}`}
@@ -49,7 +58,11 @@ export const ImagePlaceholder = ({
         <img
           src={src}
           alt={alt}
+          width={intrinsicWidth}
+          height={intrinsicHeight}
           loading={priority ? 'eager' : 'lazy'}
+          fetchPriority={priority ? 'high' : 'auto'}
+          decoding={priority ? 'sync' : 'async'}
           className="real-image"
           onError={() => setImageError(true)}
         />

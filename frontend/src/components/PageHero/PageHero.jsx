@@ -17,10 +17,16 @@ export const PageHero = ({
   return (
     <div className={`page-hero-banner ${heroImage ? 'has-bg-image' : ''}`}>
       {heroImage && (
-        <div 
-          className="page-hero-bg-image" 
-          style={{ backgroundImage: `url(${heroImage})` }} 
-          aria-hidden="true" 
+        <img
+          src={heroImage}
+          alt=""
+          width={1600}
+          height={680}
+          loading="eager"
+          fetchPriority="high"
+          decoding="sync"
+          className="page-hero-bg-image"
+          aria-hidden="true"
         />
       )}
       <div className="page-hero-overlay" aria-hidden="true" />

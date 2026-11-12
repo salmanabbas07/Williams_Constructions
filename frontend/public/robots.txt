@@ -1,5 +1,5 @@
-# https://thewilliamsconstructions.com robots.txt
+# https://williamscleaning.si robots.txt
 User-agent: *
 Allow: /
 
-Sitemap: https://thewilliamsconstructions.com/sitemap.xml
+Sitemap: https://williamscleaning.si/sitemap.xml
