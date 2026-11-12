@@ -1,7 +1,7 @@
 // src/pages/FAQ/FAQPage.jsx
 import React, { useState } from 'react';
 import { ChevronDown, HelpCircle, PhoneCall, Mail, MessageSquare } from 'lucide-react';
-import SEO from '../../components/SEO/SEO';
+import SEO, { buildBreadcrumbSchema } from '../../components/SEO/SEO';
 import PageHero from '../../components/PageHero/PageHero';
 import SectionTitle from '../../components/SectionTitle/SectionTitle';
 import Button from '../../components/Button/Button';
@@ -38,7 +38,13 @@ export const FAQPage = () => {
         title="Pogosta vprašanja in odgovori | Williams Constructions"
         description="Odgovori na pogosta vprašanja glede delovnih dovoljenj, rokov napotitve delavcev, certifikatov varilcev ter vodenja projektov z Williams Constructions."
         canonical="/faq"
-        schemaData={faqSchema}
+        schemaData={[
+          faqSchema,
+          buildBreadcrumbSchema([
+            { label: 'Domov', path: '/' },
+            { label: 'Pogosta vprašanja', path: '/faq' }
+          ])
+        ]}
       />
 
       <PageHero

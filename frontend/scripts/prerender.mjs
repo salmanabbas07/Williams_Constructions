@@ -4,10 +4,12 @@ import http from 'node:http';
 import os from 'node:os';
 import { spawn } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
+import { blogData } from '../src/data/blogData.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DIST_DIR = path.resolve(__dirname, '../dist');
 const INDEX_HTML_PATH = path.join(DIST_DIR, 'index.html');
+const SITE_URL = 'https://williamsconstruction.si';
 
 const ROUTES = [
   '/',
@@ -16,6 +18,7 @@ const ROUTES = [
   '/projects',
   '/how-we-work',
   '/blog',
+  ...blogData.map((post) => `/blog/${post.slug}`),
   '/faq',
   '/contact',
   '/privacy-policy',
@@ -181,13 +184,16 @@ const baseScripts = new Set(
 const summary = [];
 
 for (const route of ROUTES) {
+  const isBlogArticle = route.startsWith('/blog/');
+  const slugSegment = isBlogArticle ? encodeURIComponent(route.slice('/blog/'.length)) : '';
+  const canonicalPath = isBlogArticle ? `/blog/${slugSegment}` : route;
   const expectedCanonical = route === '/404'
     ? null
     : route === '/'
-      ? 'https://williamscleaning.si/'
-      : `https://williamscleaning.si${route}`;
+      ? `${SITE_URL}/`
+      : `${SITE_URL}${canonicalPath}`;
 
-  await cdp('Page.navigate', { url: `${baseOrigin}${route}` });
+  await cdp('Page.navigate', { url: `${baseOrigin}${canonicalPath}` });
 
   const evalRes = await cdp('Runtime.evaluate', {
     awaitPromise: true,
@@ -203,7 +209,13 @@ for (const route of ROUTES) {
           const text = (main ? main.innerText : '').trim();
           const hasLoader = text.includes('Nalaganje Williams Constructions');
           const staticCleared = document.head.querySelectorAll('[data-static-seo="true"]').length === 0;
-          const hasCanonical = [...document.head.querySelectorAll('link[rel="canonical"]')].some((el) => el.href === expectedCanonical);
+          const hasCanonical = [...document.head.querySelectorAll('link[rel="canonical"]')].some((el) => {
+            try {
+              return new URL(el.href).href === new URL(expectedCanonical).href;
+            } catch {
+              return el.href === expectedCanonical;
+            }
+          });
           const hasNoIndex = [...document.head.querySelectorAll('meta[name="robots"]')].some((el) => el.content.includes('noindex'));
           const headReady = isNotFound ? hasNoIndex : hasCanonical;
 
@@ -215,21 +227,24 @@ for (const route of ROUTES) {
 
         // Scroll steadily down so all whileInView animations trigger and settle at opacity: 1
         const docHeight = document.body.scrollHeight;
-        const step = Math.max(350, Math.floor(window.innerHeight * 0.6));
+        const step = Math.max(300, Math.floor(window.innerHeight * 0.5));
         for (let y = 0; y <= docHeight; y += step) {
           window.scrollTo(0, y);
-          await new Promise((r) => setTimeout(r, 90));
+          await new Promise((r) => setTimeout(r, 110));
         }
         window.scrollTo(0, docHeight);
-        await new Promise((r) => setTimeout(r, 900));
+        await new Promise((r) => setTimeout(r, 950));
 
-        // Catch any remaining elements with opacity: 0 inside main and bring into viewport center
-        const hiddenFadeEls = Array.from(document.querySelectorAll('#main-content [style*="opacity: 0"]'));
-        for (const el of hiddenFadeEls) {
-          el.scrollIntoView({ behavior: 'instant', block: 'center' });
-          await new Promise((r) => setTimeout(r, 150));
-        }
-        if (hiddenFadeEls.length > 0) {
+        // Multi-pass sweep to guarantee every FadeIn element under #main-content reaches opacity: 1
+        for (let pass = 0; pass < 3; pass++) {
+          const hiddenFadeEls = Array.from(
+            document.querySelectorAll('#main-content .fade-in-element[style*="opacity: 0"], #main-content .fade-in-element[style*="opacity:0"], #main-content [style*="opacity: 0"]')
+          ).filter((el) => !el.closest('.swiper-slide'));
+          if (hiddenFadeEls.length === 0) break;
+          for (const el of hiddenFadeEls) {
+            el.scrollIntoView({ behavior: 'instant', block: 'center' });
+            await new Promise((r) => setTimeout(r, 160));
+          }
           await new Promise((r) => setTimeout(r, 850));
         }
 

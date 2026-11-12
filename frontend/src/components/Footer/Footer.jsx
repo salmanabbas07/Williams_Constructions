@@ -93,6 +93,11 @@ export const Footer = () => {
                   </Link>
                 </li>
                 <li>
+                  <Link to="/how-we-work" className="footer-link">
+                    <ArrowRight size={14} className="link-arrow" /> Kako delamo
+                  </Link>
+                </li>
+                <li>
                   <Link to="/blog" className="footer-link">
                     <ArrowRight size={14} className="link-arrow" /> Blog in novice
                   </Link>

@@ -76,7 +76,7 @@ export const About = ({ variant = 'preview' }) => {
         {/* Section Header */}
         <SectionTitle
           badge="O nas"
-          title={isFull ? "Vaš zaupanja vreden partner v gradbeništvu" : "O nas – Williams Construction"}
+          title={isFull ? "Vaš zaupanja vreden partner v gradbeništvu" : "O nas – Williams Constructions"}
           subtitle="Že vrsto let gradimo z vizijo, natančnostjo in nepopustljivo predanostjo kakovosti."
           align="left"
         />
@@ -88,7 +88,7 @@ export const About = ({ variant = 'preview' }) => {
             <div className="about-image-wrapper">
               <ImagePlaceholder
                 src="/images/about-workforce-supervision.webp"
-                alt="about-workforce-supervision.webp - about"
+                alt="Nadzor gradbene ekipe in koordinacija del na gradbišču v Sloveniji"
                 aspectRatio="4/3"
                 category="about"
                 filename="about-workforce-supervision.jpg"

@@ -3,6 +3,7 @@ import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { LazyMotion, domAnimation } from 'framer-motion';
+import { blogData } from './data/blogData';
 
 // Global Styles
 import './styles/variables.css';
@@ -58,6 +59,11 @@ const routePreloaders = {
 export const preloadRoute = (pathname) => {
   const normalized = decodeURIComponent(pathname || '/').replace(/\/+$/, '') || '/';
   if (normalized === '/Pogosta vprašanja') return routePreloaders['/faq']();
+  if (normalized.startsWith('/blog/')) {
+    const slug = normalized.slice('/blog/'.length);
+    const hasPost = blogData.some((post) => post.slug === slug);
+    return hasPost ? BlogPage.preload() : NotFoundPage.preload();
+  }
   const loader = routePreloaders[normalized];
   return loader ? loader() : NotFoundPage.preload();
 };
@@ -110,6 +116,7 @@ export const App = () => {
                   <Route path="/industries" element={<IndustriesPage />} />
                   <Route path="/how-we-work" element={<HowWeWorkPage />} />
                   <Route path="/blog" element={<BlogPage />} />
+                  <Route path="/blog/:slug" element={<BlogPage />} />
                   <Route path="/faq" element={<FAQPage />} />
                   <Route path="/pogosta-vprasanja" element={<FAQPage />} />
                   <Route path="/Pogosta vprašanja" element={<FAQPage />} />

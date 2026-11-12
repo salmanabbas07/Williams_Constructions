@@ -1,55 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://williamscleaning.si/</loc>
+    <loc>https://williamsconstruction.si/</loc>
     <lastmod>2026-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://williamscleaning.si/about</loc>
+    <loc>https://williamsconstruction.si/about</loc>
     <lastmod>2026-11-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://williamscleaning.si/services</loc>
+    <loc>https://williamsconstruction.si/services</loc>
     <lastmod>2026-11-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://williamscleaning.si/projects</loc>
+    <loc>https://williamsconstruction.si/projects</loc>
     <lastmod>2026-11-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://williamscleaning.si/how-we-work</loc>
+    <loc>https://williamsconstruction.si/how-we-work</loc>
     <lastmod>2026-11-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://williamscleaning.si/blog</loc>
+    <loc>https://williamsconstruction.si/blog</loc>
     <lastmod>2026-11-12</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://williamsconstruction.si/blog/vodic-po-delovnih-dovoljenjih-za-gradbenistvo-v-sloveniji</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://williamscleaning.si/faq</loc>
+    <loc>https://williamsconstruction.si/blog/pomen-iso-9606-certificiranih-varilcev-pri-industrijskih-projektih</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://williamsconstruction.si/blog/premagovanje-komunikacijskih-ovir-v-vecjezicnih-gradbenih-ekipah</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://williamsconstruction.si/blog/varnost-in-ucinkovitost-pri-upravljanju-tezke-gradbene-mehanizacije</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://williamsconstruction.si/blog/zidarska-in-opa%C5%BEna-dela-kakovost-in-roki-v-sloveniji</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://williamsconstruction.si/blog/obvezna-dokumentacija-in-predaja-mape-delavca-pred-inpekcijo</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://williamsconstruction.si/blog/priprava-varilskih-in-montaznih-ekip-za-industrijske-remonte</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://williamsconstruction.si/blog/logistika-skladiscenje-in-vzdrzevanje-gradbene-mehanizacije</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://williamsconstruction.si/faq</loc>
     <lastmod>2026-11-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://williamscleaning.si/contact</loc>
+    <loc>https://williamsconstruction.si/contact</loc>
     <lastmod>2026-11-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://williamscleaning.si/privacy-policy</loc>
+    <loc>https://williamsconstruction.si/privacy-policy</loc>
     <lastmod>2026-11-12</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>

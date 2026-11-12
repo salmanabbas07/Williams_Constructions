@@ -136,7 +136,7 @@ export const WhyChooseUs = () => {
             <div className="why-image-sticky">
               <ImagePlaceholder
                src="/images/why-choose-williams-constructions.webp"
-                alt="why-choose-williams-constructions.webp"
+                alt="Zanesljiva gradbena delovna sila Williams Constructions na projektu v Sloveniji"
                 aspectRatio="4/5"
                 category="about"
                 filename="why-choose-williams-constructions.jpg"

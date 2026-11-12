@@ -1,12 +1,37 @@
 // src/pages/Blog/BlogPage.jsx
 import React, { useState } from 'react';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { Calendar, User, Clock, ArrowRight, Search, X, BookOpen } from 'lucide-react';
-import SEO from '../../components/SEO/SEO';
+import SEO, { SITE_URL, buildBreadcrumbSchema } from '../../components/SEO/SEO';
 import PageHero from '../../components/PageHero/PageHero';
 import Button from '../../components/Button/Button';
 import ImagePlaceholder from '../../components/ImagePlaceholder/ImagePlaceholder';
+import NotFoundPage from '../NotFound/NotFoundPage';
 import { blogData } from '../../data/blogData';
 import './BlogPage.css';
+
+const SLOVENIAN_MONTHS = {
+  januar: '01',
+  februar: '02',
+  marec: '03',
+  april: '04',
+  maj: '05',
+  junij: '06',
+  julij: '07',
+  avgust: '08',
+  september: '09',
+  oktober: '10',
+  november: '11',
+  december: '12'
+};
+
+const toIsoDate = (slovenianDate) => {
+  const match = String(slovenianDate || '').match(/(\d+)\.\s*([a-zčšž]+)\s+(\d{4})/i);
+  if (!match) return undefined;
+  const day = match[1].padStart(2, '0');
+  const month = SLOVENIAN_MONTHS[match[2].toLowerCase()];
+  return month ? `${match[3]}-${month}-${day}` : undefined;
+};
 
 const CATEGORIES = [
   'Vse', 
@@ -17,9 +42,80 @@ const CATEGORIES = [
 ];
 
 export const BlogPage = () => {
+  const { slug } = useParams();
+  const navigate = useNavigate();
   const [selectedCategory, setSelectedCategory] = useState('Vse');
   const [searchQuery, setSearchQuery] = useState('');
-  const [activeArticle, setActiveArticle] = useState(null);
+
+  const routeArticle = slug
+    ? blogData.find((post) => post.slug === slug || encodeURIComponent(post.slug) === slug)
+    : null;
+
+  if (slug && !routeArticle) {
+    return <NotFoundPage />;
+  }
+
+  const activeArticle = routeArticle;
+  const closeArticleModal = () => navigate('/blog');
+
+  const blogIndexSchema = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Blog',
+      name: 'Gradbeni blog in vpogledi | Williams Constructions',
+      url: `${SITE_URL}/blog`,
+      description:
+        'Strokovni članki o delovnih dovoljenjih v slovenskem gradbeništvu, varilskih standardih, varnosti na gradbišču in učinkovitem vodenju gradbenih ekip.',
+      publisher: {
+        '@type': 'Organization',
+        name: 'Williams Services & Williams Constructions',
+        url: `${SITE_URL}/`
+      }
+    },
+    buildBreadcrumbSchema([
+      { label: 'Domov', path: '/' },
+      { label: 'Blog', path: '/blog' }
+    ])
+  ];
+
+  const articleSchema = routeArticle
+    ? [
+        {
+          '@context': 'https://schema.org',
+          '@type': 'BlogPosting',
+          headline: routeArticle.title,
+          description: routeArticle.seoDescription,
+          image: `${SITE_URL}${routeArticle.image}`,
+          url: `${SITE_URL}/blog/${encodeURIComponent(routeArticle.slug)}`,
+          mainEntityOfPage: {
+            '@type': 'WebPage',
+            '@id': `${SITE_URL}/blog/${encodeURIComponent(routeArticle.slug)}`
+          },
+          datePublished: toIsoDate(routeArticle.date),
+          author: {
+            '@type': routeArticle.author === 'Toushif Williams' ? 'Person' : 'Organization',
+            name: routeArticle.author
+          },
+          publisher: {
+            '@type': 'Organization',
+            name: 'Williams Services & Williams Constructions',
+            logo: {
+              '@type': 'ImageObject',
+              url: `${SITE_URL}/images/newLOGO.png`
+            }
+          },
+          inLanguage: 'sl-SI'
+        },
+        buildBreadcrumbSchema([
+          { label: 'Domov', path: '/' },
+          { label: 'Blog', path: '/blog' },
+          {
+            label: routeArticle.shortH1,
+            path: `/blog/${encodeURIComponent(routeArticle.slug)}`
+          }
+        ])
+      ]
+    : blogIndexSchema;
 
   const filteredPosts = blogData.filter((post) => {
     const matchesCategory = selectedCategory === 'Vse' || post.category === selectedCategory;
@@ -31,17 +127,36 @@ export const BlogPage = () => {
   return (
     <div className="blog-page">
       <SEO
-        title="Gradbeni blog in vpogledi | Williams Constructions"
-        description="Strokovni članki o delovnih dovoljenjih v slovenskem gradbeništvu, varilskih standardih, varnosti na gradbišču in učinkovitem vodenju gradbenih ekip."
-        canonical="/blog"
+        title={
+          routeArticle
+            ? routeArticle.seoTitle
+            : 'Gradbeni blog in vpogledi | Williams Constructions'
+        }
+        description={
+          routeArticle
+            ? routeArticle.seoDescription
+            : 'Strokovni članki o delovnih dovoljenjih v slovenskem gradbeništvu, varilskih standardih, varnosti na gradbišču in učinkovitem vodenju gradbenih ekip.'
+        }
+        canonical={
+          routeArticle
+            ? `/blog/${encodeURIComponent(routeArticle.slug)}`
+            : '/blog'
+        }
+        ogType={routeArticle ? 'article' : 'website'}
+        ogImage={routeArticle ? routeArticle.image : '/og-image.jpg'}
+        schemaData={articleSchema}
       />
 
       <PageHero
         src="/images/blog-banner.webp"
         badge="Znanje in panožne novice"
-        title="Gradbeni in kadrovski vpogledi"
+        title={routeArticle ? routeArticle.shortH1 : 'Gradbeni in kadrovski vpogledi'}
         subtitle="Praktični vodniki o slovenski delovnopravni skladnosti, produktivnosti delavcev, standardih varjenja in varnosti na gradbišču."
-        breadcrumbs={[{ label: 'Blog' }]}
+        breadcrumbs={
+          routeArticle
+            ? [{ label: 'Blog', path: '/blog' }, { label: routeArticle.shortH1 }]
+            : [{ label: 'Blog' }]
+        }
       />
 
       <div className="blog-container section-py">
@@ -127,14 +242,13 @@ export const BlogPage = () => {
                       <span className="blog-card-author">
                         <User size={13} /> Avtor: {/* {post.author} */}
                       </span>
-                      <button
-                        type="button"
+                      <Link
+                        to={`/blog/${post.slug}`}
                         className="blog-read-btn"
-                        onClick={() => setActiveArticle(post)}
                       >
                         <span>Preberite več</span>
                         <ArrowRight size={15} />
-                      </button>
+                      </Link>
                     </div>
                   </div>
                 </article>
@@ -146,12 +260,12 @@ export const BlogPage = () => {
 
       {/* Article Detail Reading Modal */}
       {activeArticle && (
-        <div className="article-modal-backdrop" onClick={() => setActiveArticle(null)}>
+        <div className="article-modal-backdrop" onClick={closeArticleModal}>
           <div className="article-modal-window" onClick={(e) => e.stopPropagation()}>
             <button
               type="button"
               className="article-modal-close"
-              onClick={() => setActiveArticle(null)}
+              onClick={closeArticleModal}
               aria-label="Zapri članek"
             >
               <X size={22} />
@@ -188,14 +302,13 @@ export const BlogPage = () => {
                 to="/contact"
                 variant="primary"
                 size="md"
-                onClick={() => setActiveArticle(null)}
               >
                 Povprašajte za delovno silo za vaš projekt
               </Button>
               <Button
                 variant="outline"
                 size="md"
-                onClick={() => setActiveArticle(null)}
+                onClick={closeArticleModal}
               >
                 Nazaj na vse članke
               </Button>

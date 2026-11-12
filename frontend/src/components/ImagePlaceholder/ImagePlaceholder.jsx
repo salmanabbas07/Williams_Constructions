@@ -51,8 +51,8 @@ export const ImagePlaceholder = ({
         aspectRatio,
         ...style
       }}
-      role="img"
-      aria-label={alt}
+      role={hasRealImage ? undefined : 'img'}
+      aria-label={hasRealImage ? undefined : alt}
     >
       {hasRealImage ? (
         <img

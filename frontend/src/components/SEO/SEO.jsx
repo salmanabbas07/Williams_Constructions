@@ -2,6 +2,19 @@
 import React, { useLayoutEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 
+export const SITE_URL = 'https://williamsconstruction.si';
+
+export const buildBreadcrumbSchema = (items) => ({
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: items.map((item, idx) => ({
+    '@type': 'ListItem',
+    position: idx + 1,
+    name: item.label,
+    ...(item.path ? { item: `${SITE_URL}${item.path === '/' ? '/' : item.path}` } : {})
+  }))
+});
+
 export const SEO = ({
   title,
   description,
@@ -15,10 +28,14 @@ export const SEO = ({
   const fullTitle = title || defaultTitle;
   const defaultDesc = 'Williams Constructions zagotavlja certificirane varilce, zidarje in strojnike težke gradbene mehanizacije s popolno pravno skladnostjo po vsej Sloveniji.';
   const metaDesc = description || defaultDesc;
-  const siteUrl = 'https://williamscleaning.si';
   const normalizedCanonical = canonical === '/' ? '/' : canonical || '/';
-  const canonicalUrl = `${siteUrl}${normalizedCanonical}`;
-  const imageUrl = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;
+  const canonicalUrl = `${SITE_URL}${normalizedCanonical}`;
+  const imageUrl = ogImage.startsWith('http') ? ogImage : `${SITE_URL}${ogImage}`;
+  const schemas = Array.isArray(schemaData)
+    ? schemaData.filter(Boolean)
+    : schemaData
+      ? [schemaData]
+      : [];
 
   useLayoutEffect(() => {
     document.head.querySelectorAll('[data-static-seo="true"]').forEach((el) => el.remove());
@@ -55,11 +72,11 @@ export const SEO = ({
       <meta name="twitter:image:alt" content={fullTitle} />
 
       {/* Structured Data (JSON-LD) */}
-      {schemaData && (
-        <script type="application/ld+json">
-          {JSON.stringify(schemaData)}
+      {schemas.map((schema, idx) => (
+        <script key={idx} type="application/ld+json">
+          {JSON.stringify(schema)}
         </script>
-      )}
+      ))}
     </Helmet>
   );
 };

@@ -1,6 +1,7 @@
 # Williams Constructions - Frontend Production Apache / LiteSpeed Configuration
+ErrorDocument 404 /404.html
 
-# Prevent trailing-slash redirects on pre-rendered route directories (/about -> /about/)
+# Prevent directory trailing-slash redirects on pre-rendered route directories (/about -> /about/)
 <IfModule mod_dir.c>
     DirectorySlash Off
 </IfModule>
@@ -9,21 +10,40 @@
     RewriteEngine On
     RewriteBase /
 
-    # Preserve existing backend API directory
+    # 1. Force HTTPS + canonical non-www host (skip POST so API payloads stay intact)
+    RewriteCond %{REQUEST_METHOD} !POST
+    RewriteCond %{HTTPS} off
+    RewriteCond %{HTTP:X-Forwarded-Proto} !https [NC]
+    RewriteRule ^ https://williamsconstruction.si%{REQUEST_URI} [R=301,L]
+
+    RewriteCond %{REQUEST_METHOD} !POST
+    RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+    RewriteRule ^ https://williamsconstruction.si%{REQUEST_URI} [R=301,L]
+
+    # 2. Preserve existing backend PHP API directory without rewriting
     RewriteRule ^backend(/.*)?$ - [L]
 
-    # Serve pre-rendered directory index directly (e.g. /about -> /about/index.html)
+    # 3. Canonical 301 redirects for legacy alias URLs
+    RewriteRule ^industries/?$ /projects [R=301,L,NC]
+    RewriteRule ^pogosta-vprasanja/?$ /faq [R=301,L,NC]
+    RewriteCond %{THE_REQUEST} \s/+Pogosta(%20|\s)+vpra(%C5%A1|%C5%A0|š|Š)anja/?[\s?] [NC]
+    RewriteRule ^ /faq [R=301,L]
+
+    # 4. Enforce no trailing slash on non-root URLs (/about/ -> 301 /about)
+    RewriteCond %{REQUEST_METHOD} !POST
+    RewriteRule ^(.+)/$ /$1 [R=301,L]
+
+    # 5. Serve pre-rendered HTML for clean routes (e.g. /about -> /about/index.html)
     RewriteCond %{REQUEST_FILENAME} -d
     RewriteCond %{REQUEST_FILENAME}/index.html -f
-    RewriteRule ^(.+?)/?$ $1/index.html [L]
+    RewriteRule ^(.+)$ $1/index.html [L]
 
-    # Do not rewrite existing files or asset requests
-    RewriteCond %{REQUEST_FILENAME} -f [OR]
-    RewriteCond %{REQUEST_FILENAME} -d
+    # 6. Serve existing static files directly
+    RewriteCond %{REQUEST_FILENAME} -f
     RewriteRule ^ - [L]
 
-    # SPA fallback to root index.html for dynamic aliases & client routing
-    RewriteRule ^ index.html [L]
+    # 7. Unknown routes return real HTTP 404 status with pre-rendered 404.html
+    RewriteRule ^ - [R=404,L]
 </IfModule>
 
 # Compression (GZIP) for faster mobile delivery

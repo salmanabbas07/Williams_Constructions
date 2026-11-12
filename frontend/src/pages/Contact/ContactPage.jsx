@@ -8,7 +8,7 @@ import {
   Clock, 
   ExternalLink 
 } from 'lucide-react';
-import SEO from '../../components/SEO/SEO';
+import SEO, { SITE_URL, buildBreadcrumbSchema } from '../../components/SEO/SEO';
 import PageHero from '../../components/PageHero/PageHero';
 import Appointment from '../Home/sections/Appointment/Appointment';
 import { companyContact } from '../../data/navigationData';
@@ -18,12 +18,42 @@ export const ContactPage = () => {
   const [searchParams] = useSearchParams();
   const preselectedService = searchParams.get('service') || searchParams.get('industry') || '';
 
+  const contactSchema = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'ContactPage',
+      name: 'Kontakt in povpraševanje | Williams Constructions SI',
+      url: `${SITE_URL}/contact`,
+      description:
+        'Kontaktirajte Williams Constructions v Ljubljani na +386 69 803 622 za najem gradbenih delavcev, certificiranih varilcev, zidarjev in strojnikov.',
+      mainEntity: {
+        '@type': 'LocalBusiness',
+        name: 'Williams Services & Williams Constructions',
+        url: `${SITE_URL}/`,
+        telephone: '+38669803622',
+        email: companyContact.email,
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: 'Kotnikova ulica 28',
+          addressLocality: 'Ljubljana',
+          postalCode: '1000',
+          addressCountry: 'SI'
+        }
+      }
+    },
+    buildBreadcrumbSchema([
+      { label: 'Domov', path: '/' },
+      { label: 'Kontakt', path: '/contact' }
+    ])
+  ];
+
   return (
     <div className="contact-page">
       <SEO
         title="Kontakt in povpraševanje | Williams Constructions SI"
         description="Kontaktirajte Williams Constructions v Ljubljani na +386 69 803 622 za najem gradbenih delavcev, certificiranih varilcev, zidarjev in strojnikov."
         canonical="/contact"
+        schemaData={contactSchema}
       />
 
       <PageHero

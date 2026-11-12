@@ -1,18 +1,34 @@
 // src/pages/PrivacyPolicy/PrivacyPolicyPage.jsx
 import React from 'react';
 import { Info } from 'lucide-react';
-import SEO from '../../components/SEO/SEO';
+import SEO, { SITE_URL, buildBreadcrumbSchema } from '../../components/SEO/SEO';
 import PageHero from '../../components/PageHero/PageHero';
 import { companyContact } from '../../data/navigationData';
 import './PrivacyPolicyPage.css';
 
 export const PrivacyPolicyPage = () => {
+  const privacySchema = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: 'Politika zasebnosti (GDPR) | Williams Constructions',
+      url: `${SITE_URL}/privacy-policy`,
+      description:
+        'Preberite politiko zasebnosti in pravila obdelave osebnih podatkov podjetja Williams Services d.o.o. v skladu s Splošno uredbo GDPR ter zakonom ZVOP-2.'
+    },
+    buildBreadcrumbSchema([
+      { label: 'Domov', path: '/' },
+      { label: 'Politika zasebnosti', path: '/privacy-policy' }
+    ])
+  ];
+
   return (
     <div className="privacy-page">
       <SEO
         title="Politika zasebnosti (GDPR) | Williams Constructions"
         description="Preberite politiko zasebnosti in pravila obdelave osebnih podatkov podjetja Williams Services d.o.o. v skladu s Splošno uredbo GDPR ter zakonom ZVOP-2."
         canonical="/privacy-policy"
+        schemaData={privacySchema}
       />
 
       <PageHero
