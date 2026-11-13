@@ -38,7 +38,14 @@ export const SEO = ({
       : [];
 
   useLayoutEffect(() => {
+    // 1. Remove static tags marked with data-static-seo
     document.head.querySelectorAll('[data-static-seo="true"]').forEach((el) => el.remove());
+
+    // 2. Remove static description tag if duplicate exists
+    const descs = Array.from(document.head.querySelectorAll('meta[name="description"]'));
+    if (descs.length > 1) {
+      descs.filter((el) => !el.hasAttribute('data-rh')).forEach((el) => el.remove());
+    }
   }, [fullTitle, metaDesc, canonicalUrl, imageUrl, noIndex]);
 
   return (

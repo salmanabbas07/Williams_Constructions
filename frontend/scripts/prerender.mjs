@@ -153,23 +153,57 @@ const cdp = (method, params = {}) =>
 await cdp('Page.enable');
 await cdp('Runtime.enable');
 
-function buildPrerenderedHtml(template, { rootHtml, headTagsHtml, routeCssHtml, preloadTagsHtml, canonicalHref }) {
-  // Strip static fallback SEO tags so only route-specific pre-rendered tags exist
-  let html = template
+function escapeHtml(str = '') {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+}
+
+function escapeAttr(str = '') {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/"/g, '&quot;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+}
+
+function buildPrerenderedHtml(template, { rootHtml, headTagsHtml, routeCssHtml, preloadTagsHtml, canonicalHref, title, description }) {
+  let html = template;
+
+  // 1. Cleanly update <title> at the top of <head>
+  if (title) {
+    html = html.replace(/<title>[\s\S]*?<\/title>/i, `<title>${escapeHtml(title)}</title>`);
+  }
+
+  // 2. Cleanly update <meta name="description"> at the top of <head>
+  if (description) {
+    html = html.replace(/<meta\s+name="description"[^>]*\/?>/i, `<meta name="description" content="${escapeAttr(description)}" />`);
+  }
+
+  // 3. Cleanly update or remove <link rel="canonical">
+  if (canonicalHref) {
+    html = html.replace(/<link\s+rel="canonical"[^>]*\/?>/i, `<link rel="canonical" href="${canonicalHref}" />`);
+  } else {
+    html = html.replace(/<link\s+rel="canonical"[^>]*\/?>\s*/i, '');
+  }
+
+  // 4. Strip old static SEO tags marked with data-static-seo (og, twitter, json-ld)
+  html = html
     .replace(/<title[^>]*\bdata-static-seo="true"[^>]*>[\s\S]*?<\/title>\s*/gi, '')
     .replace(/<(?:meta|link)[^>]*\bdata-static-seo="true"[^>]*\/?>\s*/gi, '')
     .replace(/<script[^>]*\bdata-static-seo="true"[^>]*>[\s\S]*?<\/script>\s*/gi, '');
 
-  // Keep hero slide 1 image preload strictly on the homepage
+  // 5. Keep hero slide 1 image preload strictly on the homepage
   if (canonicalHref && !canonicalHref.endsWith('.si/')) {
     html = html.replace(/<link[^>]*href="\/images\/hero-welding-slovenia\.webp"[^>]*>\s*/gi, '');
   }
 
-  // Inject route SEO tags, route CSS stylesheets, and JS preloads before </head>
+  // 6. Inject route secondary SEO tags (OG, Twitter, JSON-LD), route CSS stylesheets, and JS preloads before </head>
   const extraHead = [headTagsHtml, routeCssHtml, preloadTagsHtml].filter(Boolean).join('\n    ');
   html = html.replace('</head>', `    ${extraHead}\n  </head>`);
 
-  // Inject rendered root HTML
+  // 7. Inject rendered root HTML
   html = html.replace('<div id="root"></div>', `<div id="root">${rootHtml}</div>`);
   return html;
 }
@@ -252,12 +286,9 @@ for (const route of ROUTES) {
         window.scrollTo(0, 0);
         await new Promise((r) => setTimeout(r, 140));
 
-        // Collect all React-rendered SEO head tags and mark with data-static-seo="true"
+        // Collect secondary React-rendered SEO head tags (OG, Twitter, JSON-LD schema, robots)
         const seoSelector = [
-          'title',
-          'meta[name="description"]',
           'meta[name="robots"]',
-          'link[rel="canonical"]',
           'meta[property^="og:"]',
           'meta[name^="twitter:"]',
           'script[type="application/ld+json"]'
@@ -270,6 +301,11 @@ for (const route of ROUTES) {
             return clone.outerHTML;
           })
           .join('\\n    ');
+
+        const descEl =
+          document.head.querySelector('meta[name="description"][data-rh="true"]') ||
+          document.head.querySelector('meta[name="description"]');
+        const description = descEl ? descEl.getAttribute('content') : '';
 
         // Collect dynamic CSS stylesheets and JS chunks injected for this route
         const cssHrefs = Array.from(document.head.querySelectorAll('link[rel="stylesheet"][href^="/assets/"]'))
@@ -297,6 +333,7 @@ for (const route of ROUTES) {
           jsSrcs: [...new Set(jsSrcs)],
           lcpHeroSrc,
           title: document.title,
+          description,
           mainWords,
           h1Text
         };
@@ -321,7 +358,9 @@ for (const route of ROUTES) {
     headTagsHtml: data.headTagsHtml,
     routeCssHtml,
     preloadTagsHtml: routePreloads.join('\n    '),
-    canonicalHref: expectedCanonical
+    canonicalHref: expectedCanonical,
+    title: data.title,
+    description: data.description
   });
 
   if (route === '/') {
@@ -337,6 +376,7 @@ for (const route of ROUTES) {
   summary.push({
     route,
     titleLen: data.title.length,
+    descLen: (data.description || '').length,
     mainWords: data.mainWords,
     h1Len: data.h1Text.length
   });
